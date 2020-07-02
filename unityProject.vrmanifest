@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.bowandarrow_unity.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\user\\Documents\\GitHub\\VR-BowAndArrow\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "BowAndArrow_Unity [Testing]"
+        }
+      }
+    }
+  ]
+}
