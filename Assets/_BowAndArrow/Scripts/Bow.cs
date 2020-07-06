@@ -65,6 +65,7 @@ public class Bow : MonoBehaviour
     }
     public void Pull(Transform hand)
     {
+        Debug.Log("Pull");
         float distance = Vector3.Distance(hand.position, m_Start.position);
 
         if (distance >= m_GrabThreshold)
@@ -74,7 +75,8 @@ public class Bow : MonoBehaviour
     }
     public void Release()
     {
-        if(m_PulValue > 0.25f)
+        Debug.Log("Release");
+        if (m_PulValue > 0.25f)
             FireArrow();
 
         m_PullingHand = null;
