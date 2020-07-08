@@ -8,6 +8,7 @@ TagManager:
   - Bow
   - projectile
   - Environment
+  - Arrow
   layers:
   - Default
   - TransparentFX

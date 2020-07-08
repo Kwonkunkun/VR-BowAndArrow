@@ -21,15 +21,6 @@ public class Arrow : MonoBehaviour
 
         // Rotate
         m_Rigidbody.MoveRotation(Quaternion.LookRotation(m_Rigidbody.velocity, transform.up));
-
-        //// Collision
-        //if (Physics.Linecast(m_LstPosition, m_Tip.position, 1 << 9))
-        //{
-        //    Stop();
-        //}
-
-        // Store position
-        m_LstPosition = m_Tip.position;
     }
 
     private void Stop()
@@ -56,10 +47,9 @@ public class Arrow : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if(collision.gameObject.CompareTag("Environment"))
-        //{
-        //    Debug.Log("Environment");
-        //    Stop();
-        //}
+        if (collision.gameObject.CompareTag("Environment"))
+        {
+            Stop();
+        }
     }
 }

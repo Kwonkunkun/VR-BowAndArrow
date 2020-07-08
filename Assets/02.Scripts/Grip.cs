@@ -16,35 +16,41 @@ public class Grip : MonoBehaviour
         tr = this.GetComponent<Transform>();
     }
 
-    public void OnGrip()
+    public void OnGrip(string what)
     {
-        //steamInput의 함수호출
-        SteamInput.instance.PutUpBow(gripObject.GetComponent<Bow>());
+        if (what == "Bow")
+        {
+            //steamInput의 함수호출
+            SteamInput.instance.PutUpBow(gripObject.GetComponent<Bow>());
 
-        //bow를 왼손에 잡는다. gravity false, kinemetic true
-        //gripObject.GetComponent<BoxCollider>().enabled = false;
-        Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
-        Transform tr_girp = gripObject.GetComponent<Transform>();
-        rb_girp.isKinematic = true;
-        rb_girp.useGravity = false;
-        tr_girp.SetParent(tr);
-        tr_girp.position = tr.position;
-        tr_girp.localPosition -= new Vector3(0f, -0.075f, 0f);
-        tr_girp.localRotation = Quaternion.Euler(0, 0, 0);
+            //bow를 왼손에 잡는다. gravity false, kinemetic true
+            //gripObject.GetComponent<BoxCollider>().enabled = false;
+            Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
+            Transform tr_girp = gripObject.GetComponent<Transform>();
+            rb_girp.isKinematic = true;
+            rb_girp.useGravity = false;
+            tr_girp.SetParent(tr);
+            tr_girp.position = tr.position;
+            tr_girp.localPosition -= new Vector3(0f, -0.075f, 0f);
+            tr_girp.localRotation = Quaternion.Euler(45f, 0, 0);
+        }
     }
 
-    public void OffGrip()
+    public void OffGrip(string what)
     {
-        //steamInput의 함수호출
-        SteamInput.instance.PutDownBow();
+        if (what == "Bow")
+        {
+            //steamInput의 함수호출
+            SteamInput.instance.PutDownBow();
 
-        //bow를 왼손에 잡는다. gravity false, kinemetic true
-        //gripObject.GetComponent<BoxCollider>().enabled = false;
-        Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
-        Transform tr_girp = gripObject.GetComponent<Transform>();
-        rb_girp.isKinematic = false;
-        rb_girp.useGravity = true;
-        tr_girp.SetParent(null);
+            //bow를 왼손에 잡는다. gravity false, kinemetic true
+            //gripObject.GetComponent<BoxCollider>().enabled = false;
+            Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
+            Transform tr_girp = gripObject.GetComponent<Transform>();
+            rb_girp.isKinematic = false;
+            rb_girp.useGravity = true;
+            tr_girp.SetParent(null);
+        }
     }
 
     private void OnTriggerEnter(Collider other)

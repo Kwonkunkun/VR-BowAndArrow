@@ -31,6 +31,7 @@ public class SteamInput : MonoBehaviour
     public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
 
     public Grip leftGrip = null;
+    public Grip rightGrip = null;
 
     private void Update()
     {
@@ -40,11 +41,17 @@ public class SteamInput : MonoBehaviour
     private void Inputs()
     {
         //오른손
-        //화살을 땡겨서 쏜다.
         if (m_PullAction.GetStateDown(m_RightHandPose.inputSource))
         {
             Debug.Log("RightHand GetStateDown");
 
+            //활잡기
+            if (rightGrip.isInBowSpace == true && m_Bow == null)
+            {
+                Debug.Log("Grip Bow");
+                rightGrip.OnGrip("Bow");
+            }
+            //활쏘기
             if (m_Bow != null)
             {
                 Debug.Log("Bow pull");
@@ -55,11 +62,18 @@ public class SteamInput : MonoBehaviour
         {
             Debug.Log("RightHand GetStateUp");
 
+            //활놓기
+            if (rightGrip.isInBowSpace == true && m_Bow != null)
+            {
+                Debug.Log("Put down Bow");
+                rightGrip.OffGrip("Bow");
+            }
+            //활쏘기
             if (m_Bow != null)
             {
                 Debug.Log("Bow release");
                 m_Bow.Release();
-                haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+                haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_RightHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
             }
         }
 
@@ -72,10 +86,14 @@ public class SteamInput : MonoBehaviour
             if (leftGrip.isInBowSpace == true && m_Bow == null)
             {
                 Debug.Log("Grip Bow");
-                leftGrip.OnGrip();
+                leftGrip.OnGrip("Bow");
             }
-
-            
+            //활쏘기
+            if (m_Bow != null)
+            {
+                Debug.Log("Bow pull");
+                m_Bow.Pull(m_LeftHandPose.gameObject.transform);
+            }
         }
         if (m_PullAction.GetStateUp(m_LeftHandPose.inputSource))
         {
@@ -85,7 +103,14 @@ public class SteamInput : MonoBehaviour
             if (leftGrip.isInBowSpace == true && m_Bow != null)
             {
                 Debug.Log("Put down Bow");
-                leftGrip.OffGrip();
+                leftGrip.OffGrip("Bow");
+            }
+            //활쏘기
+            if (m_Bow != null)
+            {
+                Debug.Log("Bow release");
+                m_Bow.Release();
+                haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
             }
         }
     }
