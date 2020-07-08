@@ -37,11 +37,12 @@ public class Grip : MonoBehaviour
         }
         else if(what == "Arrow")
         {
-            //steamInput의 함수호출
-            SteamInput.instance.PutUpArrow(gripObject.GetComponent<Arrow>());
+            GameObject gameObject = Instantiate(gripObject);
 
-            Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
-            Transform tr_girp = gripObject.GetComponent<Transform>();
+            //steamInput의 함수호출
+            SteamInput.instance.PutUpArrow(gameObject.GetComponent<Arrow>());
+            Rigidbody rb_girp = gameObject.GetComponent<Rigidbody>();
+            Transform tr_girp = gameObject.GetComponent<Transform>();
             rb_girp.isKinematic = true;
             rb_girp.useGravity = false;
             tr_girp.SetParent(tr);
@@ -98,6 +99,8 @@ public class Grip : MonoBehaviour
             {
                 Debug.Log("Bow_ArrowSet");
                 SteamInput.instance.m_Bow.CreateArrow();
+
+                SteamInput.instance.DestroyArrow();
 
                 //화살을 거는 사운드 넣을것
 

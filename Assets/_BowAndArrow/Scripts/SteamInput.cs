@@ -191,4 +191,11 @@ public class SteamInput : MonoBehaviour
         Debug.Log("Put Down Arrow");
         m_Arrow = null;
     }
+
+    public void DestroyArrow()
+    {
+        Debug.Log("DestroyArrow");
+        Destroy(m_Arrow.gameObject);
+        m_Arrow = null;
+    }
 }
