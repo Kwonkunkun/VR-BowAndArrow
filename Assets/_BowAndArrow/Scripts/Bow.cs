@@ -14,19 +14,15 @@ public class Bow : MonoBehaviour
     public Transform m_Socket = null;
 
     private Transform m_PullingHand = null;
-    private Arrow m_CurrentArrow = null;
+    public Arrow m_CurrentArrow = null;
     private Animator m_Animator = null;
 
     private float m_PulValue = 0.0f;
 
-    private void Awake()
-    {
-        
-    }
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
-        StartCoroutine(CreateArrow(0.0f));  
+        
     }
     private void Update()
     {
@@ -48,11 +44,8 @@ public class Bow : MonoBehaviour
 
         return Vector3.Dot(diffrence, direction) / magnitude;
     }
-    private IEnumerator CreateArrow(float waitTime)
+    public void CreateArrow()
     {
-        // wait
-        yield return new WaitForSeconds(waitTime);
-
         //create child
         GameObject arrowObject = Instantiate(m_ArrowPrefab, m_Socket);
 
@@ -76,20 +69,18 @@ public class Bow : MonoBehaviour
     public void Release()
     {
         Debug.Log("Release");
-        if (m_PulValue > 0.25f)
+        if (m_PulValue > 0.25f && m_CurrentArrow != null)
             FireArrow();
 
         m_PullingHand = null;
 
         m_PulValue = 0.0f;
         m_Animator.SetFloat("Blend", 0);
-
-        if (!m_CurrentArrow)
-            StartCoroutine(CreateArrow(0.25f));
     }
     private void FireArrow()
     {
         m_CurrentArrow.Fire(m_PulValue);
         m_CurrentArrow = null;
     }
+    
 }

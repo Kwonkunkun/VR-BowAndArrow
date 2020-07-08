@@ -40,12 +40,15 @@ public class Grip : MonoBehaviour
             //steamInput의 함수호출
             SteamInput.instance.PutUpArrow(gripObject.GetComponent<Arrow>());
 
+            Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
             Transform tr_girp = gripObject.GetComponent<Transform>();
+            rb_girp.isKinematic = true;
+            rb_girp.useGravity = false;
             tr_girp.SetParent(tr);
         }
     }
 
-    public void OffGrip(string what)
+    public void OffGrip(string what, GameObject gripObj)
     {
         if (what == "Bow")
         {
@@ -54,18 +57,22 @@ public class Grip : MonoBehaviour
 
             //bow를 왼손에 잡는다. gravity false, kinemetic true
             //gripObject.GetComponent<BoxCollider>().enabled = false;
-            Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
-            Transform tr_girp = gripObject.GetComponent<Transform>();
+            Rigidbody rb_girp = gripObj.GetComponent<Rigidbody>();
+            Transform tr_girp = gripObj.GetComponent<Transform>();
             rb_girp.isKinematic = false;
             rb_girp.useGravity = true;
             tr_girp.SetParent(null);
+
         }
         else if (what == "Arrow")
         {
             //steamInput의 함수호출
             SteamInput.instance.PutDownArrow();
 
-            Transform tr_girp = gripObject.GetComponent<Transform>();
+            Rigidbody rb_girp = gripObj.GetComponent<Rigidbody>();
+            Transform tr_girp = gripObj.GetComponent<Transform>();
+            rb_girp.isKinematic = false;
+            rb_girp.useGravity = true;
             tr_girp.SetParent(null);
         }
     }
@@ -78,25 +85,38 @@ public class Grip : MonoBehaviour
             gripObject = other.gameObject;
             isInBowSpace = true;
         }
-        else if (other.CompareTag("Arrow"))
+        if (other.CompareTag("Arrow"))
         {
             Debug.Log("In Arrow Space");
             gripObject = other.gameObject;
             isInArrowSpace = true;
         }
+        if (other.CompareTag("Bow_ArrowSet") && SteamInput.instance.m_Arrow != null)
+        {
+            //화살이 이미 걸려있는 경우는 제외
+            if (SteamInput.instance.m_Bow.m_CurrentArrow == null)
+            {
+                Debug.Log("Bow_ArrowSet");
+                SteamInput.instance.m_Bow.CreateArrow();
+
+                //화살을 거는 사운드 넣을것
+
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.CompareTag("Bow"))
         {
             Debug.Log("Out Bow Space");
             gripObject = null;
             isInBowSpace = false;
         }
-        else if (other.CompareTag("Arrow"))
+        if (other.CompareTag("Arrow"))
         {
-            Debug.Log("Out Bow Space");
+            Debug.Log("Out Arrow Space");
             gripObject = null;
             isInArrowSpace = false;
         }
