@@ -24,6 +24,7 @@ public class SteamInput : MonoBehaviour
 
     #endregion
 
+    public Arrow m_Arrow = null;
     public Bow m_Bow = null;
     public SteamVR_Behaviour_Pose m_LeftHandPose = null;
     public SteamVR_Behaviour_Pose m_RightHandPose = null;
@@ -57,6 +58,12 @@ public class SteamInput : MonoBehaviour
                 Debug.Log("Bow pull");
                 m_Bow.Pull(m_RightHandPose.gameObject.transform);
             }
+            //화살 잡기
+            if(rightGrip.isInArrowSpace == true && m_Arrow == null)
+            {
+                Debug.Log("Grip Arrow");
+                rightGrip.OnGrip("Arrow");
+            }
         }
         if (m_PullAction.GetStateUp(m_RightHandPose.inputSource))
         {
@@ -74,6 +81,12 @@ public class SteamInput : MonoBehaviour
                 Debug.Log("Bow release");
                 m_Bow.Release();
                 haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_RightHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+            }
+            //화살 놓기
+            if (rightGrip.isInArrowSpace == true && m_Arrow != null)
+            {
+                Debug.Log("Grip Arrow");
+                rightGrip.OffGrip("Arrow");
             }
         }
 
@@ -125,5 +138,17 @@ public class SteamInput : MonoBehaviour
     {
         Debug.Log("Put Down Bow");
         m_Bow = null;
+    }
+
+    public void PutUpArrow(Arrow arrow)
+    {
+        Debug.Log("Put Up Arrow");
+        m_Arrow = arrow;
+    }
+
+    public void PutDownArrow()
+    {
+        Debug.Log("Put Down Arrow");
+        m_Arrow = null;
     }
 }

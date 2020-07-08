@@ -8,7 +8,8 @@ public class Grip : MonoBehaviour
 {
     public GameObject gripObject = null;
     public bool isInBowSpace = false;
-    
+    public bool isInArrowSpace = false;
+
     Transform tr;
     
     private void Start()
@@ -34,6 +35,14 @@ public class Grip : MonoBehaviour
             tr_girp.localPosition -= new Vector3(0f, -0.075f, 0f);
             tr_girp.localRotation = Quaternion.Euler(45f, 0, 0);
         }
+        else if(what == "Arrow")
+        {
+            //steamInput의 함수호출
+            SteamInput.instance.PutUpArrow(gripObject.GetComponent<Arrow>());
+
+            Transform tr_girp = gripObject.GetComponent<Transform>();
+            tr_girp.SetParent(tr);
+        }
     }
 
     public void OffGrip(string what)
@@ -51,6 +60,14 @@ public class Grip : MonoBehaviour
             rb_girp.useGravity = true;
             tr_girp.SetParent(null);
         }
+        else if (what == "Arrow")
+        {
+            //steamInput의 함수호출
+            SteamInput.instance.PutDownArrow();
+
+            Transform tr_girp = gripObject.GetComponent<Transform>();
+            tr_girp.SetParent(null);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -61,6 +78,12 @@ public class Grip : MonoBehaviour
             gripObject = other.gameObject;
             isInBowSpace = true;
         }
+        else if (other.CompareTag("Arrow"))
+        {
+            Debug.Log("In Arrow Space");
+            gripObject = other.gameObject;
+            isInArrowSpace = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -70,6 +93,12 @@ public class Grip : MonoBehaviour
             Debug.Log("Out Bow Space");
             gripObject = null;
             isInBowSpace = false;
+        }
+        else if (other.CompareTag("Arrow"))
+        {
+            Debug.Log("Out Bow Space");
+            gripObject = null;
+            isInArrowSpace = false;
         }
     }
 }
