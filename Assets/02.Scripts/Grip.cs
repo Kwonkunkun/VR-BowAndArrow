@@ -6,6 +6,7 @@ using Valve.VR;
 
 public class Grip : MonoBehaviour
 {
+
     public GameObject gripObject = null;
     public bool isInBowSpace = false;
     public bool isInArrowSpace = false;
@@ -24,7 +25,7 @@ public class Grip : MonoBehaviour
             //steamInput의 함수호출
             SteamInput.instance.PutUpBow(gripObject.GetComponent<Bow>());
 
-            //bow를 왼손에 잡는다. gravity false, kinemetic true
+            //bow를 잡는다. gravity false, kinemetic true
             //gripObject.GetComponent<BoxCollider>().enabled = false;
             Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
             Transform tr_girp = gripObject.GetComponent<Transform>();
@@ -34,6 +35,7 @@ public class Grip : MonoBehaviour
             tr_girp.position = tr.position;
             tr_girp.localPosition -= new Vector3(0f, -0.075f, 0f);
             tr_girp.localRotation = Quaternion.Euler(45f, 0, 0);
+            
         }
         else if(what == "Arrow")
         {
@@ -45,7 +47,7 @@ public class Grip : MonoBehaviour
             Transform tr_girp = gameObject.GetComponent<Transform>();
             rb_girp.isKinematic = true;
             rb_girp.useGravity = false;
-            tr_girp.SetParent(tr);
+            tr_girp.SetParent(tr);           
         }
     }
 
@@ -63,7 +65,6 @@ public class Grip : MonoBehaviour
             rb_girp.isKinematic = false;
             rb_girp.useGravity = true;
             tr_girp.SetParent(null);
-
         }
         else if (what == "Arrow")
         {

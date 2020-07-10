@@ -26,7 +26,7 @@ public class Bow : MonoBehaviour
     }
     private void Update()
     {
-        if (!m_PullingHand || !m_CurrentArrow)
+        if (!m_PullingHand /*|| !m_CurrentArrow*/)
             return;
 
         m_PulValue = CalculaterPull(m_PullingHand);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 320107371}
   m_Layer: 0
   m_Name: Start
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 463045334}
   m_Layer: 0
   m_Name: End
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 7755451594581294923}
   m_Layer: 0
   m_Name: StringGeom
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -323,9 +323,11 @@ GameObject:
   - component: {fileID: 5854033015894534605}
   - component: {fileID: 3176465753457872173}
   - component: {fileID: 705318187586076703}
-  m_Layer: 0
+  - component: {fileID: 670560241}
+  - component: {fileID: 670560242}
+  m_Layer: 9
   m_Name: Bow
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -388,6 +390,36 @@ MonoBehaviour:
   m_Start: {fileID: 320107371}
   m_End: {fileID: 463045334}
   m_Socket: {fileID: 1872672291559342736}
+  m_CurrentArrow: {fileID: 0}
+--- !u!54 &670560241
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589571369817754473}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &670560242
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589571369817754473}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1, y: 0.3, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2938454372705689396
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,9 +490,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 188689376331940377}
+  - component: {fileID: 1123480944}
   m_Layer: 0
   m_Name: bow_base_CTRL_HmNUL
-  m_TagString: Untagged
+  m_TagString: Bow_ArrowSet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -480,6 +513,19 @@ Transform:
   m_Father: {fileID: 5854033015894534605}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1123480944
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3964478419147240847}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.02, y: 0.01, z: 0.04}
+  m_Center: {x: 0, y: 0, z: 0.02}
 --- !u!1 &5080916563539887391
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,7 +630,7 @@ GameObject:
   - component: {fileID: 3165665102901182011}
   m_Layer: 0
   m_Name: bow_GripPosition
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,7 +660,7 @@ GameObject:
   - component: {fileID: 3516702919244251197}
   m_Layer: 0
   m_Name: bow_base
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -771,7 +817,7 @@ GameObject:
   - component: {fileID: 5259077894753307636}
   m_Layer: 0
   m_Name: bow_noString
-  m_TagString: Untagged
+  m_TagString: Bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

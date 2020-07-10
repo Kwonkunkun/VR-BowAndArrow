@@ -79,20 +79,23 @@ public class SteamInput : MonoBehaviour
             }
 
             //화살 잡기
-            if (rightGrip.isInArrowSpace == true && m_Arrow == null)
+            if (IsRight == false)
             {
-                Debug.Log("Grip Arrow");
-                rightGrip.OnGrip("Arrow");
+                if (rightGrip.isInArrowSpace == true && m_Arrow == null)
+                {
+                    Debug.Log("Grip Arrow");
+                    rightGrip.OnGrip("Arrow");
 
-                //화살 잡는 사운드
-            }
-            //화살 놓기
-            else if (rightGrip.isInArrowSpace == true && m_Arrow != null)
-            {
-                Debug.Log("Grip Arrow");
-                rightGrip.OffGrip("Arrow", m_Arrow.gameObject);
+                    //화살 잡는 사운드
+                }
+                //화살 놓기
+                else if (rightGrip.isInArrowSpace == true && m_Arrow != null)
+                {
+                    Debug.Log("Grip Arrow");
+                    rightGrip.OffGrip("Arrow", m_Arrow.gameObject);
 
-                //화살을 놓는 사운드
+                    //화살을 놓는 사운드
+                }
             }
         }
         else if (m_PullAction.GetStateUp(m_RightHandPose.inputSource))
@@ -139,18 +142,20 @@ public class SteamInput : MonoBehaviour
                 m_Bow.Pull(m_LeftHandPose.gameObject.transform);
             }
 
-
             //화살 잡기
-            if (leftGrip.isInArrowSpace == true && m_Arrow == null)
+            if (IsLeft == false)
             {
-                Debug.Log("Grip Arrow");
-                leftGrip.OnGrip("Arrow");
-            }
-            //화살 놓기
-            else if (leftGrip.isInArrowSpace == true && m_Arrow != null)
-            {
-                Debug.Log("Grip Arrow");
-                leftGrip.OffGrip("Arrow", m_Arrow.gameObject);
+                if (leftGrip.isInArrowSpace == true && m_Arrow == null)
+                {
+                    Debug.Log("Grip Arrow");
+                    leftGrip.OnGrip("Arrow");
+                }
+                //화살 놓기
+                else if (leftGrip.isInArrowSpace == true && m_Arrow != null)
+                {
+                    Debug.Log("Grip Arrow");
+                    leftGrip.OffGrip("Arrow", m_Arrow.gameObject);
+                }
             }
         }
         else if (m_PullAction.GetStateUp(m_LeftHandPose.inputSource))
