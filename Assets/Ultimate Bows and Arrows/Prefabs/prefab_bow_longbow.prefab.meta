@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 09b92b75004e02046b7db152eb3ecbc9
+labels:
+- Bow
+- Longbow
+- Ranged
+- Weapon
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

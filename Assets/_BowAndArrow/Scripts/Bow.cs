@@ -34,6 +34,7 @@ public class Bow : MonoBehaviour
 
         m_Animator.SetFloat("Blend", m_PulValue);
     }
+
     private float CalculaterPull(Transform pullHand)
     {
         Vector3 direction = m_End.position - m_Start.position;

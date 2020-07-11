@@ -24,18 +24,17 @@ public class SteamInput : MonoBehaviour
 
     #endregion
 
-    public Arrow m_Arrow = null;
-    public Bow m_Bow = null;
+    #region Input 관련
     public SteamVR_Behaviour_Pose m_LeftHandPose = null;
     public SteamVR_Behaviour_Pose m_RightHandPose = null;
     public SteamVR_Action_Boolean m_PullAction = null;
     public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
+    #endregion
 
+    #region 양손 Grip 스크립트
     public Grip leftGrip = null;
     public Grip rightGrip = null;
-
-    public bool IsRight = false;
-    public bool IsLeft = false;
+    #endregion
 
     private void Update()
     {
@@ -44,163 +43,193 @@ public class SteamInput : MonoBehaviour
 
     private void Inputs()
     {
-        //오른손
-        if (m_PullAction.GetStateDown(m_RightHandPose.inputSource))
+        #region 오른손
+        //잡은게 없을때
+        if (rightGrip.isGrip == false)
         {
-            Debug.Log("RightHand GetStateDown");
-
-            //활잡기
-            if (rightGrip.isInBowSpace == true && m_Bow == null && IsRight == false && IsLeft == false)
+            if (m_PullAction.GetStateDown(m_RightHandPose.inputSource))
             {
-                Debug.Log("Grip Bow");
-                rightGrip.OnGrip("Bow");
-                IsRight = true;
-                IsLeft = false;
+                Debug.Log("RightHand Grip");
 
-                //활을 줍는 사운드
-            }
-            //활놓기
-            else if (rightGrip.isInBowSpace == true && m_Bow != null && IsRight == true)
-            {
-                Debug.Log("Put down Bow");
-                rightGrip.OffGrip("Bow", m_Bow.gameObject);
-                IsRight = false;
-
-                //활을 놓는 사운드
-            }
-
-            //활쏘기
-            if (m_Bow != null && IsLeft == true)
-            {
-                Debug.Log("Bow pull");
-                m_Bow.Pull(m_RightHandPose.gameObject.transform);
-
-                //활시위를 당기는 사운드 (bow 스크립트에서 처리하셈)
-            }
-
-            //화살 잡기
-            if (IsRight == false)
-            {
-                if (rightGrip.isInArrowSpace == true && m_Arrow == null)
+                //활쏘기, 왼손에 활이 있어야 됨
+                if (leftGrip.isGripBow == true && rightGrip.isInBowBend == true)
                 {
-                    Debug.Log("Grip Arrow");
-                    rightGrip.OnGrip("Arrow");
+                    Debug.Log("Bow pull");
+                    Bow bow = leftGrip.gripObj.GetComponent<Bow>();                   
+                    bow.Pull(m_RightHandPose.gameObject.transform);
 
-                    //화살 잡는 사운드
+                    //활시위를 당기는 사운드 (bow 스크립트에서 처리하셈)
                 }
-                //화살 놓기
-                else if (rightGrip.isInArrowSpace == true && m_Arrow != null)
+                else
                 {
-                    Debug.Log("Grip Arrow");
-                    rightGrip.OffGrip("Arrow", m_Arrow.gameObject);
+                    //활잡기
+                    if (rightGrip.isInBowSpace == true)
+                    {
+                        Debug.Log("Grip Bow");
+                        rightGrip.OnGrip("Bow");
+
+                        //활을 줍는 사운드
+                    }
+
+                    //화살 잡기
+                    else if (rightGrip.isInArrowSpace == true)
+                    {
+                        Debug.Log("Grip Arrow");
+                        rightGrip.OnGrip("Arrow");
+
+                        //화살 잡는 사운드
+                    }
+
+                    //공잡기
+                    else if (rightGrip.isInThrowObjSpace == true)
+                    {
+                        Debug.Log("OnGrip Ball");
+                        rightGrip.OnGrip("ThrowObj");
+                    }
+                }
+            }
+            else if (m_PullAction.GetStateUp(m_RightHandPose.inputSource))
+            {
+                Debug.Log("RightHand GetStateUp");
+
+                //활쏘기
+                if (leftGrip.isGripBow == true)
+                {
+                    Debug.Log("Bow release");
+                    Bow bow = leftGrip.gripObj.GetComponent<Bow>();
+                    bow.Release();
+                    haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_RightHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+
+                    //활이 날아가는 사운드
+                }         
+            }
+        }
+        //잡은게 있을때
+        else if(rightGrip.isGrip == true)
+        {
+            if (m_PullAction.GetStateDown(m_RightHandPose.inputSource))
+            {
+                //활놓기
+                if (rightGrip.isGripBow == true)
+                {
+                    Debug.Log(" Bow");
+                    rightGrip.OffGrip("Bow");
+
+                    //활을 놓는 사운드
+                }
+
+                //화살 놓기
+                if (rightGrip.isGripArrow == true)
+                {
+                    //Debug.Log(" Arrow");
+                    rightGrip.OffGrip("Arrow");
 
                     //화살을 놓는 사운드
                 }
+
+                //공 던지기
+                if (rightGrip.isGripThrowObj == true)
+                {
+                    Debug.Log("OffGrip ThrowObj");
+                    rightGrip.OffGrip("ThrowObj");
+                }
             }
         }
-        else if (m_PullAction.GetStateUp(m_RightHandPose.inputSource))
-        {
-            Debug.Log("RightHand GetStateUp");
-            
-            //활쏘기
-            if (m_Bow != null && IsLeft == true)
-            {
-                Debug.Log("Bow release");
-                m_Bow.Release();
-                haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_RightHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+        #endregion
 
-                //활이 날아가는 사운드
-            }  
-        }
-
-        //사운드는 왼손 동일
-
+        #region 왼손
         //왼손
-        if (m_PullAction.GetStateDown(m_LeftHandPose.inputSource))
+        //잡은게 없을때
+        if (leftGrip.isGrip == false)
         {
-            Debug.Log("LeftHand GetStateDown");
-            //활잡기
-            if (leftGrip.isInBowSpace == true && m_Bow == null && IsLeft == false && IsRight == false)
+            if (m_PullAction.GetStateDown(m_LeftHandPose.inputSource))
             {
-                Debug.Log("Grip Bow");
-                leftGrip.OnGrip("Bow");
-                IsLeft = true;
-                IsRight = false;
-            }
-            //활놓기
-            else if (leftGrip.isInBowSpace == true && m_Bow != null && IsLeft == true)
-            {
-                Debug.Log("Put down Bow");
-                leftGrip.OffGrip("Bow", m_Bow.gameObject);
-                IsLeft = false;
-            }
+                Debug.Log("RightHand Grip");
 
-            //활쏘기
-            if (m_Bow != null && IsRight == true)
-            {
-                Debug.Log("Bow pull");
-                m_Bow.Pull(m_LeftHandPose.gameObject.transform);
-            }
-
-            //화살 잡기
-            if (IsLeft == false)
-            {
-                if (leftGrip.isInArrowSpace == true && m_Arrow == null)
+                //활쏘기, 왼손에 활이 있어야 됨
+                if (rightGrip.isGripBow == true && leftGrip.isApproach == false)
                 {
-                    Debug.Log("Grip Arrow");
-                    leftGrip.OnGrip("Arrow");
+                    Debug.Log("Bow pull");
+                    Bow bow = leftGrip.GetComponent<Bow>();
+                    bow.Pull(m_LeftHandPose.gameObject.transform);
+
+                    //활시위를 당기는 사운드 (bow 스크립트에서 처리하셈)
                 }
+                else
+                {
+                    //활잡기
+                    if (leftGrip.isInBowSpace == true)
+                    {
+                        Debug.Log("Grip Bow");
+                        leftGrip.OnGrip("Bow");
+
+                        //활을 줍는 사운드
+                    }
+
+                    //화살 잡기
+                    else if (leftGrip.isInArrowSpace == true)
+                    {
+                        Debug.Log("Grip Arrow");
+                        leftGrip.OnGrip("Arrow");
+
+                        //화살 잡는 사운드
+                    }
+
+                    //공잡기
+                    else if (leftGrip.isInThrowObjSpace == true)
+                    {
+                        Debug.Log("OnGrip Ball");
+                        leftGrip.OnGrip("ThrowObj");
+                    }
+                }
+            }
+            else if (m_PullAction.GetStateUp(m_LeftHandPose.inputSource))
+            {
+                Debug.Log("RightHand GetStateUp");
+
+                //활쏘기
+                if (rightGrip.isGripBow == true && leftGrip.isInBowBend == true)
+                {
+                    Debug.Log("Bow release");
+                    Bow bow = rightGrip.GetComponent<Bow>();
+                    bow.Release();
+                    haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+
+                    //활이 날아가는 사운드
+                }
+            }
+        }
+        //잡은게 있을때
+        else if (leftGrip.isGrip == true)
+        {
+            if (m_PullAction.GetStateDown(m_LeftHandPose.inputSource))
+            {
+                //활놓기
+                if (leftGrip.isGripBow == true)
+                {
+                    Debug.Log(" Bow");
+                    leftGrip.OffGrip("Bow");
+
+                    //활을 놓는 사운드
+                }
+
                 //화살 놓기
-                else if (leftGrip.isInArrowSpace == true && m_Arrow != null)
+                if (leftGrip.isGripArrow == true)
                 {
-                    Debug.Log("Grip Arrow");
-                    leftGrip.OffGrip("Arrow", m_Arrow.gameObject);
+                    //Debug.Log(" Arrow");
+                    leftGrip.OffGrip("Arrow");
+
+                    //화살을 놓는 사운드
+                }
+
+                //공 던지기
+                if (leftGrip.isGripThrowObj == true)
+                {
+                    Debug.Log("OffGrip ThrowObj");
+                    leftGrip.OffGrip("ThrowObj");
                 }
             }
         }
-        else if (m_PullAction.GetStateUp(m_LeftHandPose.inputSource))
-        {
-            Debug.Log("LeftHand GetStateUp");
-
-
-            //활쏘기
-            if (m_Bow != null && IsRight == true)
-            {
-                Debug.Log("Bow release");
-                m_Bow.Release();
-                haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
-            }
-        }
-    }
-
-    public void PutUpBow(Bow bow)
-    {
-        Debug.Log("Put Up Bow");
-        m_Bow = bow;
-    }
-
-    public void PutDownBow()
-    {
-        Debug.Log("Put Down Bow");
-        m_Bow = null;
-    }
-
-    public void PutUpArrow(Arrow arrow)
-    {
-        Debug.Log("Put Up Arrow");
-        m_Arrow = arrow;
-    }
-
-    public void PutDownArrow()
-    {
-        Debug.Log("Put Down Arrow");
-        m_Arrow = null;
-    }
-
-    public void DestroyArrow()
-    {
-        Debug.Log("DestroyArrow");
-        Destroy(m_Arrow.gameObject);
-        m_Arrow = null;
+        #endregion
     }
 }

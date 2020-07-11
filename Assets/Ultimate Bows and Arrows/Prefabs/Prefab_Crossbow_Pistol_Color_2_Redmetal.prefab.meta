@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a62765cb1de2b034ab788d539326c78e
+labels:
+- Bow
+- Crossbow
+- Pistol
+- Ranged
+- Weapon
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

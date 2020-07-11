@@ -5,10 +5,21 @@ using UnityEngine;
 using Valve.VR;
 
 public class Grip : MonoBehaviour
-{
-    public GameObject gripObject = null;
+{   
+    [Header ("Approach")]
+    public bool isApproach = false;
     public bool isInBowSpace = false;
+    public bool isInBowBend = false;
     public bool isInArrowSpace = false;
+    public bool isInThrowObjSpace = false;
+    public GameObject approachObj = null;
+
+    [Header("Grip")]
+    public bool isGrip = false;
+    public bool isGripBow = false;
+    public bool isGripArrow = false;
+    public bool isGripThrowObj = false;
+    public GameObject gripObj = null;
 
     Transform tr;
     SteamVR_Behaviour_Skeleton skeleton;
@@ -19,116 +30,174 @@ public class Grip : MonoBehaviour
         skeleton = GetComponent<SteamVR_Behaviour_Skeleton>();
     }
 
+    #region 잡기 관련
     public void OnGrip(string what)
     {
+        //이미 잡은게 있다면
+        if (isGrip == true && gripObj == null)
+            return;
+
+        //공통부분
+        gripObj = approachObj;
+        Rigidbody rb_girpObj = gripObj.GetComponent<Rigidbody>();
+        Transform tr_girpObj = gripObj.GetComponent<Transform>();
+        rb_girpObj.isKinematic = true;
+        rb_girpObj.useGravity = false;
+        tr_girpObj.SetParent(tr);
+
+        //추가부분
         if (what == "Bow")
         {
-            //steamInput의 함수호출
-            SteamInput.instance.PutUpBow(gripObject.GetComponent<Bow>());
+            tr_girpObj.position = tr.position;
+            tr_girpObj.localPosition -= new Vector3(0f, -0.075f, 0f);
+            tr_girpObj.localRotation = Quaternion.Euler(45f, 0, 0);
 
-            //bow를 잡는다. gravity false, kinemetic true
-            //gripObject.GetComponent<BoxCollider>().enabled = false;
-            Rigidbody rb_girp = gripObject.GetComponent<Rigidbody>();
-            Transform tr_girp = gripObject.GetComponent<Transform>();
-            rb_girp.isKinematic = true;
-            rb_girp.useGravity = false;
-            tr_girp.SetParent(tr);
-            tr_girp.position = tr.position;
-            tr_girp.localPosition -= new Vector3(0f, -0.075f, 0f);
-            tr_girp.localRotation = Quaternion.Euler(45f, 0, 0);
+            gripObj.GetComponent<BowBlend>().OnGripPose(skeleton);
 
-            gripObject.GetComponent<BowBlend>().OnGripPose(skeleton);
-        }
-        else if(what == "Arrow")
-        {
-            GameObject gameObject = Instantiate(gripObject);
-
-            //steamInput의 함수호출
-            SteamInput.instance.PutUpArrow(gameObject.GetComponent<Arrow>());
-            Rigidbody rb_girp = gameObject.GetComponent<Rigidbody>();
-            Transform tr_girp = gameObject.GetComponent<Transform>();
-            rb_girp.isKinematic = true;
-            rb_girp.useGravity = false;
-            tr_girp.SetParent(tr);
-
-
-        }
-    }
-
-    public void OffGrip(string what, GameObject gripObj)
-    {
-        if (what == "Bow")
-        {
-            //steamInput의 함수호출
-            SteamInput.instance.PutDownBow();
-
-            //bow를 왼손에 잡는다. gravity false, kinemetic true
-            //gripObject.GetComponent<BoxCollider>().enabled = false;
-            Rigidbody rb_girp = gripObj.GetComponent<Rigidbody>();
-            Transform tr_girp = gripObj.GetComponent<Transform>();
-            rb_girp.isKinematic = false;
-            rb_girp.useGravity = true;
-            tr_girp.SetParent(null);
-
-            gripObj.GetComponent<BowBlend>().OffGripPose(skeleton);
+            isGripBow = true;
         }
         else if (what == "Arrow")
         {
-            //steamInput의 함수호출
-            SteamInput.instance.PutDownArrow();
+            //attachObj.GetComponent<ArrowBlend>().OnGripPose(skeleton);
 
-            Rigidbody rb_girp = gripObj.GetComponent<Rigidbody>();
-            Transform tr_girp = gripObj.GetComponent<Transform>();
-            rb_girp.isKinematic = false;
-            rb_girp.useGravity = true;
-            tr_girp.SetParent(null);
+            isGripArrow = true;
         }
+        else if(what == "ThrowObj")
+        {
+            //여기에 grip pose 애니매이션 ㄲ
+
+            isGripThrowObj = true;
+        }
+        isGrip = true;
     }
 
+    public void OffGrip(string what)
+    {
+        //잡은게 없다면
+        if (isGrip == false && gripObj != null)
+            return;
+
+        //공통 부분
+        Rigidbody rb_girpObj = gripObj.GetComponent<Rigidbody>();
+        Transform tr_girpObj = gripObj.GetComponent<Transform>();
+        rb_girpObj.isKinematic = false;
+        rb_girpObj.useGravity = true;
+        tr_girpObj.SetParent(null);
+        
+        //추가부분
+        if (what == "Bow")
+        {
+            gripObj.GetComponent<BowBlend>().OffGripPose(skeleton);
+
+            isGripBow = false;
+        }
+        else if (what == "Arrow")
+        {
+            //gripObj.GetComponent<ArrowBlend>().OffGripPose(skeleton);
+
+            isGripArrow = false;
+        }
+        else if (what == "ThrowObj")
+        {
+            isGripThrowObj = false;
+        }
+
+        isGrip = false;
+        gripObj = null;
+    }
+    #endregion
+
+    #region Approach관련
     private void OnTriggerEnter(Collider other)
     {
+        //화살걸기
+        if (other.CompareTag("Bow_ArrowSet") && isGripArrow == true 
+            && (SteamInput.instance.leftGrip.isGripBow == true || SteamInput.instance.rightGrip.isGripBow == true))
+        {
+            Bow bow = null;
+            if (SteamInput.instance.leftGrip.isGripBow == true)
+                bow = SteamInput.instance.leftGrip.gripObj.GetComponent<Bow>();
+            else if(SteamInput.instance.rightGrip.isGripBow == true)
+                bow = SteamInput.instance.rightGrip.gripObj.GetComponent<Bow>();
+
+            //화살이 이미 걸려있는 경우는 제외
+            if (bow.m_CurrentArrow == null)
+            {
+                Debug.Log("Bow_ArrowSet");
+                bow.CreateArrow();
+
+                isGripArrow = false;
+                isGrip = false;
+                Destroy(gripObj);
+                gripObj = null;
+
+                //화살을 거는 사운드 넣을것
+            }
+        }
+
+        //이미 근처에 다가간것이 있다면? return
+        if (isGrip == true)
+            return;
+        
+        if (isApproach == true)
+            return;
+
         if (other.CompareTag("Bow"))
         {
             Debug.Log("In Bow Space");
-            gripObject = other.gameObject;
+            approachObj = other.gameObject;
             isInBowSpace = true;
+            isApproach = true;
         }
-        if (other.CompareTag("Arrow"))
+        else if (other.CompareTag("Arrow"))
         {
             Debug.Log("In Arrow Space");
-            gripObject = other.gameObject;
+            approachObj = other.gameObject;
             isInArrowSpace = true;
+            isApproach = true;
         }
-        if (other.CompareTag("Bow_ArrowSet") && SteamInput.instance.m_Arrow != null)
+        else if (other.CompareTag("ThrowObj"))
         {
-            //화살이 이미 걸려있는 경우는 제외
-            if (SteamInput.instance.m_Bow.m_CurrentArrow == null)
-            {
-                Debug.Log("Bow_ArrowSet");
-                SteamInput.instance.m_Bow.CreateArrow();
-
-                SteamInput.instance.DestroyArrow();
-
-                //화살을 거는 사운드 넣을것
-
-            }
+            Debug.Log("In ThrowObj Space");
+            approachObj = other.gameObject;
+            isInThrowObjSpace = true;
+            isApproach = true;
+        }      
+        else if(other.CompareTag("BowBend"))
+        {
+            isInBowBend = true;
+            isApproach = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-
         if (other.CompareTag("Bow"))
         {
             Debug.Log("Out Bow Space");
-            gripObject = null;
+            approachObj = null;
             isInBowSpace = false;
+            isApproach = false;
         }
-        if (other.CompareTag("Arrow"))
+        else if (other.CompareTag("Arrow"))
         {
             Debug.Log("Out Arrow Space");
-            gripObject = null;
+            approachObj = null;
             isInArrowSpace = false;
+            isApproach = false;
+        }
+        else if (other.CompareTag("ThrowObj"))
+        {
+            Debug.Log("Out ThrowObj Space");
+            approachObj = null;
+            isInThrowObjSpace = false;
+            isApproach = false;
+        }
+        else if (other.CompareTag("BowBend"))
+        {
+            isInBowBend = false;
+            isApproach = false;
         }
     }
+    #endregion
 }
