@@ -16,7 +16,7 @@ public class ArrowBlend : MonoBehaviour
     {
         if (skeletonPoser != null && skeleton != null)
         {
-            Debug.Log("Arrow Pose");
+            Debug.Log("On Pose");
             skeleton.BlendToPoser(skeletonPoser, blendToPoseTime);
         }
     }
@@ -25,7 +25,10 @@ public class ArrowBlend : MonoBehaviour
         if (skeletonPoser != null)
         {
             if (skeleton != null)
+            {
+                Debug.Log("Off Pose");
                 skeleton.BlendToSkeleton(releasePoseBlendTime);
+            }
         }
     }
 }

@@ -324,7 +324,10 @@ GameObject:
   - component: {fileID: 3176465753457872173}
   - component: {fileID: 705318187586076703}
   - component: {fileID: 670560241}
-  - component: {fileID: 670560242}
+  - component: {fileID: 758433718}
+  - component: {fileID: 758433716}
+  - component: {fileID: 758433720}
+  - component: {fileID: 758433723}
   m_Layer: 9
   m_Name: Bow
   m_TagString: Bow
@@ -384,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bed6d8822a925ec43a36f07d632808d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ArrowPrefab: {fileID: 8542102953145869890, guid: 5c51937e899ec9443a1757aefe9d49cb,
+  m_ArrowPrefab: {fileID: 6987246445367504592, guid: 5c51937e899ec9443a1757aefe9d49cb,
     type: 3}
   m_GrabThreshold: 0.15
   m_Start: {fileID: 320107371}
@@ -402,13 +405,13 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &670560242
-BoxCollider:
+--- !u!136 &758433718
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -417,9 +420,64 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.3, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.05
+  m_Height: 0.25
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.11, z: 0}
+--- !u!114 &758433716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589571369817754473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab405133a8ea96448c3bfd5b4e60146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrip: 0
+--- !u!114 &758433720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589571369817754473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c88f9936b955c74fb9f8801e69d3855, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &758433723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2589571369817754473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7418c7dd8f977d4e969202d3fa7e926, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poseEditorExpanded: 1
+  blendEditorExpanded: 1
+  poseNames:
+  - GripBow (MAIN)
+  overridePreviewLeftHandPrefab: {fileID: 1000013348574242, guid: 638779290bce1af49b356f33dcc6fccf,
+    type: 3}
+  overridePreviewRightHandPrefab: {fileID: 1000010304998954, guid: 6def53d002137b747aec0b29551e0e25,
+    type: 3}
+  skeletonMainPose: {fileID: 11400000, guid: 7ab68744f64412f44a31c67656a09721, type: 2}
+  skeletonAdditionalPoses: []
+  showLeftPreview: 1
+  showRightPreview: 1
+  previewLeftInstance: {fileID: 0}
+  previewRightInstance: {fileID: 0}
+  previewPoseSelection: 0
+  blendingBehaviours: []
+  scale: 1
 --- !u!1 &2938454372705689396
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,7 +582,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.02, y: 0.01, z: 0.04}
+  m_Size: {x: 0.03, y: 0.05, z: 0.04}
   m_Center: {x: 0, y: 0, z: 0.02}
 --- !u!1 &5080916563539887391
 GameObject:
@@ -722,9 +780,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1872672291559342736}
+  - component: {fileID: 2111379978}
   m_Layer: 0
   m_Name: notch
-  m_TagString: Untagged
+  m_TagString: BowBend
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -743,6 +802,19 @@ Transform:
   m_Father: {fileID: 3516702919244251197}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2111379978
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6361804486924920703}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7137469605256862657
 GameObject:
   m_ObjectHideFlags: 0

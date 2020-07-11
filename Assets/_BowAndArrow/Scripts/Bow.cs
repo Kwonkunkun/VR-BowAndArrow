@@ -56,6 +56,9 @@ public class Bow : MonoBehaviour
 
         //set
         m_CurrentArrow = arrowObject.GetComponent<Arrow>();
+
+        ObjStatus objStatus = arrowObject.GetComponent<ObjStatus>();
+        objStatus.isGrip = true;
     }
     public void Pull(Transform hand)
     {

@@ -219,6 +219,7 @@ GameObject:
   - component: {fileID: 1620182058576678158}
   - component: {fileID: 5781336105593723827}
   - component: {fileID: 5333871094502889306}
+  - component: {fileID: 1620182058537724504}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Arrow
@@ -293,7 +294,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6987246445367504592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7418c7dd8f977d4e969202d3fa7e926, type: 3}
   m_Name: 
@@ -322,11 +323,24 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6987246445367504592}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 455696866487c264b983f14f3318954f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1620182058537724504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6987246445367504592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eab405133a8ea96448c3bfd5b4e60146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isGrip: 0
 --- !u!1001 &1620182059060697105
 PrefabInstance:
   m_ObjectHideFlags: 0

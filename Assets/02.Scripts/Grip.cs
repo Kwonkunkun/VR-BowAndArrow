@@ -37,6 +37,13 @@ public class Grip : MonoBehaviour
         if (isGrip == true && gripObj == null)
             return;
 
+        //approachObj가 이미 잡힌 상태라면 return
+        ObjStatus objStatus = approachObj.GetComponent<ObjStatus>();
+        if (objStatus.isGrip == true)
+            return;
+
+        objStatus.isGrip = true;
+
         //공통부분
         gripObj = approachObj;
         Rigidbody rb_girpObj = gripObj.GetComponent<Rigidbody>();
@@ -49,8 +56,8 @@ public class Grip : MonoBehaviour
         if (what == "Bow")
         {
             tr_girpObj.position = tr.position;
-            tr_girpObj.localPosition -= new Vector3(0f, -0.075f, 0f);
-            tr_girpObj.localRotation = Quaternion.Euler(45f, 0, 0);
+            tr_girpObj.localPosition = new Vector3(0f, 0f, 0f);
+            tr_girpObj.localRotation = Quaternion.identity;
 
             gripObj.GetComponent<BowBlend>().OnGripPose(skeleton);
 
@@ -76,6 +83,9 @@ public class Grip : MonoBehaviour
         //잡은게 없다면
         if (isGrip == false && gripObj != null)
             return;
+
+        ObjStatus objStatus = gripObj.GetComponent<ObjStatus>();
+        objStatus.isGrip = false;
 
         //공통 부분
         Rigidbody rb_girpObj = gripObj.GetComponent<Rigidbody>();
@@ -165,6 +175,7 @@ public class Grip : MonoBehaviour
         }      
         else if(other.CompareTag("BowBend"))
         {
+            Debug.Log("In BowBend Space");
             isInBowBend = true;
             isApproach = true;
         }
