@@ -18,11 +18,13 @@ public class Bow : MonoBehaviour
     private Animator m_Animator = null;
 
     private float m_PulValue = 0.0f;
+    private string whatIsHand = null;
+
 
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
-        
+        //CreateArrow();
     }
     private void Update()
     {
@@ -33,6 +35,16 @@ public class Bow : MonoBehaviour
         m_PulValue = Mathf.Clamp(m_PulValue, 0.0f, 1.0f);
 
         m_Animator.SetFloat("Blend", m_PulValue);
+
+        if(m_CurrentArrow != null)
+        {
+            Transform tr_arrow = m_CurrentArrow.gameObject.transform;
+
+            if (whatIsHand == "Left")
+                tr_arrow.localRotation = Quaternion.Euler(0, 14f - (9f * m_PulValue), 0);
+            else if(whatIsHand == "Right")
+                tr_arrow.localRotation = Quaternion.Euler(0, -14f + (9f * m_PulValue), 0);
+        }
     }
 
     private float CalculaterPull(Transform pullHand)
@@ -45,14 +57,25 @@ public class Bow : MonoBehaviour
 
         return Vector3.Dot(diffrence, direction) / magnitude;
     }
-    public void CreateArrow()
+    public void CreateArrow(string whatHand)
     {
         //create child
         GameObject arrowObject = Instantiate(m_ArrowPrefab, m_Socket);
 
         //orient
-        arrowObject.transform.localPosition = new Vector3(0, 0, 0.425f);
-        arrowObject.transform.localEulerAngles = Vector3.zero;
+        arrowObject.transform.localScale /= 6;
+        arrowObject.transform.localPosition = new Vector3(0, 0, 0);
+        //arrowObject.transform.localEulerAngles = Vector3.zero;
+
+        if(whatHand == "Left")
+        {
+            arrowObject.transform.localEulerAngles += new Vector3(0, 14f, 0);
+        }
+        else if(whatHand == "Right")
+        {
+            arrowObject.transform.localEulerAngles += new Vector3(0, -14f, 0);
+        }
+        whatIsHand = whatHand;
 
         //set
         m_CurrentArrow = arrowObject.GetComponent<Arrow>();

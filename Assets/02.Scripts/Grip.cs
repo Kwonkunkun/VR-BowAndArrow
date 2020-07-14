@@ -125,16 +125,23 @@ public class Grip : MonoBehaviour
             && (SteamInput.instance.leftGrip.isGripBow == true || SteamInput.instance.rightGrip.isGripBow == true))
         {
             Bow bow = null;
+            string whatHand = null;
             if (SteamInput.instance.leftGrip.isGripBow == true)
+            {
                 bow = SteamInput.instance.leftGrip.gripObj.GetComponent<Bow>();
-            else if(SteamInput.instance.rightGrip.isGripBow == true)
+                whatHand = "Left";
+            }
+            else if (SteamInput.instance.rightGrip.isGripBow == true)
+            {
                 bow = SteamInput.instance.rightGrip.gripObj.GetComponent<Bow>();
+                whatHand = "Right";
+            }
 
             //화살이 이미 걸려있는 경우는 제외
             if (bow.m_CurrentArrow == null)
             {
                 Debug.Log("Bow_ArrowSet");
-                bow.CreateArrow();
+                bow.CreateArrow(whatHand);
 
                 isGripArrow = false;
                 isGrip = false;

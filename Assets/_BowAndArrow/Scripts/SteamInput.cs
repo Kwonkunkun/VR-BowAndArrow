@@ -133,13 +133,14 @@ public class SteamInput : MonoBehaviour
         {
             if (m_PullAction.GetStateDown(m_LeftHandPose.inputSource))
             {
-                Debug.Log("RightHand Grip");
+                Debug.Log("LeftHand Grip");
 
-                //활쏘기, 왼손에 활이 있어야 됨
-                if (rightGrip.isGripBow == true && leftGrip.isApproach == false)
+                //활쏘기, 오른손에 활이 있어야 됨
+                if (rightGrip.isGripBow == true && leftGrip.isInBowBend == true)
                 {
-                    Debug.Log("Bow pull");
-                    Bow bow = leftGrip.GetComponent<Bow>();
+                    Bow bow = rightGrip.gripObj.GetComponent<Bow>();
+                    if (bow == null)
+                        Debug.Log("Bow is null");
                     bow.Pull(m_LeftHandPose.gameObject.transform);
 
                     //활시위를 당기는 사운드 (bow 스크립트에서 처리하셈)
@@ -174,12 +175,11 @@ public class SteamInput : MonoBehaviour
             }
             else if (m_PullAction.GetStateUp(m_LeftHandPose.inputSource))
             {
-
                 //활쏘기
-                if (rightGrip.isGripBow == true && leftGrip.isInBowBend == true)
+                if (rightGrip.isGripBow == true)
                 {
                     Debug.Log("Bow release");
-                    Bow bow = rightGrip.GetComponent<Bow>();
+                    Bow bow = rightGrip.gripObj.GetComponent<Bow>();
                     bow.Release();
                     haptic.Execute(0.2f, 0.5f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
 
