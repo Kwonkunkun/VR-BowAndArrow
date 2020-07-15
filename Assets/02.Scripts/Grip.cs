@@ -5,7 +5,10 @@ using UnityEngine;
 using Valve.VR;
 
 public class Grip : MonoBehaviour
-{   
+{
+    Transform tr;
+    SteamVR_Behaviour_Skeleton skeleton;
+
     [Header ("Approach")]
     public bool isApproach = false;
     public bool isInBowSpace = false;
@@ -20,9 +23,6 @@ public class Grip : MonoBehaviour
     public bool isGripArrow = false;
     public bool isGripThrowObj = false;
     public GameObject gripObj = null;
-
-    Transform tr;
-    SteamVR_Behaviour_Skeleton skeleton;
 
     private void Start()
     {
@@ -41,18 +41,18 @@ public class Grip : MonoBehaviour
         ObjStatus objStatus = approachObj.GetComponent<ObjStatus>();
         if (objStatus.isGrip == true)
             return;
-
         objStatus.isGrip = true;
 
         //공통부분
         gripObj = approachObj;
+        approachObj.GetComponent<Outline>().OutlineWidth = approachObj.GetComponent<Outline>().turnOffWidth;
         Rigidbody rb_girpObj = gripObj.GetComponent<Rigidbody>();
         Transform tr_girpObj = gripObj.GetComponent<Transform>();
         rb_girpObj.isKinematic = true;
         rb_girpObj.useGravity = false;
         tr_girpObj.SetParent(tr);
 
-        //추가부분
+        //세부부분
         if (what == "Bow")
         {
             tr_girpObj.position = tr.position;
@@ -156,34 +156,33 @@ public class Grip : MonoBehaviour
             }
         }
 
-        //이미 근처에 다가간것이 있다면? return
-        if (isGrip == true)
-            return;
-        
-        if (isApproach == true)
-            return;
+        if (isGrip == true || isApproach == true)
+            return;    
 
-        if (other.CompareTag("Bow"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj"))
         {
-            Debug.Log("In Bow Space");
+            //공통사항
             approachObj = other.gameObject;
-            isInBowSpace = true;
+            approachObj.GetComponent<Outline>().OutlineWidth = 6f;
             isApproach = true;
-        }
-        else if (other.CompareTag("Arrow"))
-        {
-            Debug.Log("In Arrow Space");
-            approachObj = other.gameObject;
-            isInArrowSpace = true;
-            isApproach = true;
-        }
-        else if (other.CompareTag("ThrowObj"))
-        {
-            Debug.Log("In ThrowObj Space");
-            approachObj = other.gameObject;
-            isInThrowObjSpace = true;
-            isApproach = true;
-        }      
+
+            //세부사항
+            if (other.CompareTag("Bow"))
+            {
+                Debug.Log("In Bow Space");
+                isInBowSpace = true;
+            }
+            else if (other.CompareTag("Arrow"))
+            {
+                Debug.Log("In Arrow Space");
+                isInArrowSpace = true;
+            }
+            else if (other.CompareTag("ThrowObj"))
+            {
+                Debug.Log("In ThrowObj Space");
+                isInThrowObjSpace = true;
+            }
+        }     
         else if(other.CompareTag("BowBend"))
         {
             Debug.Log("In BowBend Space");
@@ -194,29 +193,34 @@ public class Grip : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Bow"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj"))
         {
-            Debug.Log("Out Bow Space");
-            approachObj = null;
-            isInBowSpace = false;
+            //세부사항
+            if (other.CompareTag("Bow"))
+            {
+                Debug.Log("Out Bow Space");
+                isInBowSpace = false;
+            }
+            else if (other.CompareTag("Arrow"))
+            {
+                Debug.Log("Out Arrow Space");
+                isInArrowSpace = false;
+            }
+            else if (other.CompareTag("ThrowObj"))
+            {
+                Debug.Log("Out ThrowObj Space");
+                isInThrowObjSpace = false;
+            }
+
+            //공통사항
+            other.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
             isApproach = false;
-        }
-        else if (other.CompareTag("Arrow"))
-        {
-            Debug.Log("Out Arrow Space");
-            approachObj = null;
-            isInArrowSpace = false;
-            isApproach = false;
-        }
-        else if (other.CompareTag("ThrowObj"))
-        {
-            Debug.Log("Out ThrowObj Space");
-            approachObj = null;
-            isInThrowObjSpace = false;
-            isApproach = false;
-        }
+            approachObj = null;     
+        }    
+       
         else if (other.CompareTag("BowBend"))
         {
+            Debug.Log("Out BowBend Space");
             isInBowBend = false;
             isApproach = false;
         }

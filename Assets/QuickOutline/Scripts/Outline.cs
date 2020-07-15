@@ -15,14 +15,17 @@ using UnityEngine;
 
 public class Outline : MonoBehaviour {
   private static HashSet<Mesh> registeredMeshes = new HashSet<Mesh>();
+    public float turnOnWidth = 6.0f;
+    public float turnOffWidth = 0.0f;
 
-  public enum Mode {
-    OutlineAll,
-    OutlineVisible,
-    OutlineHidden,
-    OutlineAndSilhouette,
-    SilhouetteOnly
-  }
+    public enum Mode
+    {
+        OutlineAll,
+        OutlineVisible,
+        OutlineHidden,
+        OutlineAndSilhouette,
+        SilhouetteOnly
+    }
 
   public Mode OutlineMode {
     get { return outlineMode; }

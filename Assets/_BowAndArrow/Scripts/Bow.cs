@@ -34,17 +34,6 @@ public class Bow : MonoBehaviour
     }
     private void Update()
     {
-        if (m_CurrentArrow != null)
-        {
-            Transform tr_arrow = m_CurrentArrow.gameObject.transform;
-
-            if (whatIsHand == "Left")
-                tr_arrow.LookAt(rightArrowSetPos);
-            else if (whatIsHand == "Right")
-                tr_arrow.LookAt(leftArrowSetPos);
-        }
-
-
         if (!m_PullingHand /*|| !m_CurrentArrow*/)
             return;
 
@@ -54,7 +43,17 @@ public class Bow : MonoBehaviour
         m_Animator.SetFloat("Blend", m_PulValue);
 
         //pose
-        steamVR_Skeleton_Poser.SetBlendingBehaviourValue("ShotPose", m_PulValue);    
+        steamVR_Skeleton_Poser.SetBlendingBehaviourValue("ShotPose", m_PulValue);
+
+        if (m_CurrentArrow != null)
+        {
+            Transform tr_arrow = m_CurrentArrow.gameObject.transform;
+
+            if (whatIsHand == "Left")
+                tr_arrow.LookAt(rightArrowSetPos);
+            else if (whatIsHand == "Right")
+                tr_arrow.LookAt(leftArrowSetPos);
+        }
     }
 
     private float CalculaterPull(Transform pullHand)
@@ -77,14 +76,11 @@ public class Bow : MonoBehaviour
         arrowObject.transform.localPosition = new Vector3(0, 0, 0);
         arrowObject.transform.localEulerAngles = Vector3.zero;
 
-        //if(whatHand == "Left")
-        //{
-        //    arrowObject.transform.localEulerAngles += new Vector3(0, 14f, 0);
-        //}
-        //else if(whatHand == "Right")
-        //{
-        //    arrowObject.transform.localEulerAngles += new Vector3(0, -14f, 0);
-        //}
+        if (whatHand == "Left")
+            arrowObject.transform.LookAt(rightArrowSetPos);
+        else if (whatHand == "Right")
+            arrowObject.transform.LookAt(leftArrowSetPos);
+
         whatIsHand = whatHand;
 
         //set
