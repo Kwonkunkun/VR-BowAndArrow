@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.Assertions.Must;
-
+using Valve.VR;
 public class Bow : MonoBehaviour
 {
     [Header("Assets")]
@@ -17,17 +17,34 @@ public class Bow : MonoBehaviour
     public Arrow m_CurrentArrow = null;
     private Animator m_Animator = null;
 
+    [Header("Arrow Set Position")]
+    public Transform rightArrowSetPos;
+    public Transform leftArrowSetPos;
+
     private float m_PulValue = 0.0f;
     private string whatIsHand = null;
+    private SteamVR_Skeleton_Poser steamVR_Skeleton_Poser;
 
 
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
+        steamVR_Skeleton_Poser = GetComponent<SteamVR_Skeleton_Poser>();
         //CreateArrow();
     }
     private void Update()
     {
+        if (m_CurrentArrow != null)
+        {
+            Transform tr_arrow = m_CurrentArrow.gameObject.transform;
+
+            if (whatIsHand == "Left")
+                tr_arrow.LookAt(rightArrowSetPos);
+            else if (whatIsHand == "Right")
+                tr_arrow.LookAt(leftArrowSetPos);
+        }
+
+
         if (!m_PullingHand /*|| !m_CurrentArrow*/)
             return;
 
@@ -36,15 +53,8 @@ public class Bow : MonoBehaviour
 
         m_Animator.SetFloat("Blend", m_PulValue);
 
-        if(m_CurrentArrow != null)
-        {
-            Transform tr_arrow = m_CurrentArrow.gameObject.transform;
-
-            if (whatIsHand == "Left")
-                tr_arrow.localRotation = Quaternion.Euler(0, 14f - (9f * m_PulValue), 0);
-            else if(whatIsHand == "Right")
-                tr_arrow.localRotation = Quaternion.Euler(0, -14f + (9f * m_PulValue), 0);
-        }
+        //pose
+        steamVR_Skeleton_Poser.SetBlendingBehaviourValue("ShotPose", m_PulValue);    
     }
 
     private float CalculaterPull(Transform pullHand)
@@ -65,16 +75,16 @@ public class Bow : MonoBehaviour
         //orient
         arrowObject.transform.localScale /= 6;
         arrowObject.transform.localPosition = new Vector3(0, 0, 0);
-        //arrowObject.transform.localEulerAngles = Vector3.zero;
+        arrowObject.transform.localEulerAngles = Vector3.zero;
 
-        if(whatHand == "Left")
-        {
-            arrowObject.transform.localEulerAngles += new Vector3(0, 14f, 0);
-        }
-        else if(whatHand == "Right")
-        {
-            arrowObject.transform.localEulerAngles += new Vector3(0, -14f, 0);
-        }
+        //if(whatHand == "Left")
+        //{
+        //    arrowObject.transform.localEulerAngles += new Vector3(0, 14f, 0);
+        //}
+        //else if(whatHand == "Right")
+        //{
+        //    arrowObject.transform.localEulerAngles += new Vector3(0, -14f, 0);
+        //}
         whatIsHand = whatHand;
 
         //set

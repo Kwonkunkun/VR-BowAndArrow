@@ -168,7 +168,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4670525522097414805}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7418c7dd8f977d4e969202d3fa7e926, type: 3}
   m_Name: 
@@ -183,8 +183,8 @@ MonoBehaviour:
     type: 3}
   skeletonMainPose: {fileID: 11400000, guid: 24601a244e007b2449d01d85d6cc6db3, type: 2}
   skeletonAdditionalPoses: []
-  showLeftPreview: 0
-  showRightPreview: 0
+  showLeftPreview: 1
+  showRightPreview: 1
   previewLeftInstance: {fileID: 0}
   previewRightInstance: {fileID: 0}
   previewPoseSelection: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4670525522097414805}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 455696866487c264b983f14f3318954f, type: 3}
   m_Name: 
@@ -224,7 +224,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 4670525522097414805}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.02
   m_Height: 0.1
   m_Direction: 2

@@ -65,7 +65,10 @@ public class Grip : MonoBehaviour
         }
         else if (what == "Arrow")
         {
-            //attachObj.GetComponent<ArrowBlend>().OnGripPose(skeleton);
+            tr_girpObj.position = tr.position;
+            tr_girpObj.localPosition = new Vector3(0f, 0f, 0f);
+            tr_girpObj.localRotation = Quaternion.identity;
+            gripObj.GetComponent<ArrowBlend>().OnGripPose(skeleton);
 
             isGripArrow = true;
         }
@@ -93,7 +96,7 @@ public class Grip : MonoBehaviour
         rb_girpObj.isKinematic = false;
         rb_girpObj.useGravity = true;
         tr_girpObj.SetParent(null);
-        
+
         //추가부분
         if (what == "Bow")
         {
@@ -103,7 +106,7 @@ public class Grip : MonoBehaviour
         }
         else if (what == "Arrow")
         {
-            //gripObj.GetComponent<ArrowBlend>().OffGripPose(skeleton);
+            gripObj.GetComponent<ArrowBlend>().OffGripPose(skeleton);
 
             isGripArrow = false;
         }
@@ -141,6 +144,7 @@ public class Grip : MonoBehaviour
             if (bow.m_CurrentArrow == null)
             {
                 Debug.Log("Bow_ArrowSet");
+                gripObj.GetComponent<ArrowBlend>().OffGripPose(skeleton);
                 bow.CreateArrow(whatHand);
 
                 isGripArrow = false;
