@@ -665,7 +665,8 @@ PlayerSettings:
   webGLLinkerTarget: 1
   webGLThreadsSupport: 0
   webGLWasmStreaming: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    1: AURA_IN_PROJECT;AURA_IN_SCENEVIEW
   platformArchitecture: {}
   scriptingBackend: {}
   il2cppCompilerConfiguration: {}
