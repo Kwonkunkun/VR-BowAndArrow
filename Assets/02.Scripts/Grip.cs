@@ -159,7 +159,7 @@ public class Grip : MonoBehaviour
         if (isGrip == true || isApproach == true)
             return;    
 
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall"))
         {
             //공통사항
             approachObj = other.gameObject;
@@ -182,18 +182,24 @@ public class Grip : MonoBehaviour
                 Debug.Log("In ThrowObj Space");
                 isInThrowObjSpace = true;
             }
+            else if (other.CompareTag("StartBall"))
+            {
+                //여기서 시작 
+                Debug.Log("Approach StartBall");
+                approachObj.GetComponent<IntroScript>().ScenePass();
+            }
         }     
         else if(other.CompareTag("BowBend"))
         {
             Debug.Log("In BowBend Space");
             isInBowBend = true;
             isApproach = true;
-        }
+        }       
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall"))
         {
             //세부사항
             if (other.CompareTag("Bow"))

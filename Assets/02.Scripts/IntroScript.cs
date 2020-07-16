@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Aura2API;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
@@ -7,9 +8,10 @@ using UnityEngine.SceneManagement;
 public class IntroScript : MonoBehaviour
 {
     public float timeOfPassScene;
+    public AuraVolume auraVolume;
     private void Start()
     {
-        StartCoroutine(PassScene());
+        //StartCoroutine(PassScene());
     }
     public void ScenePass()
     {
@@ -18,7 +20,8 @@ public class IntroScript : MonoBehaviour
     }
 
     IEnumerator PassScene()
-    { 
+    {
+        auraVolume.scatteringInjection.strength = 0.0f;
         yield return new WaitForSeconds(timeOfPassScene);
         SceneManager.LoadScene("RealMain");
     }
