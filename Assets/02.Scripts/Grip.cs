@@ -60,13 +60,13 @@ public class Grip : MonoBehaviour
             tr_girpObj.localRotation = Quaternion.identity;
 
             gripObj.GetComponent<BowBlend>().OnGripPose(skeleton);
-
+            gripObj.GetComponent<Bow>().OnCollider();
             isGripBow = true;
         }
         else if (what == "Arrow")
         {
             tr_girpObj.position = tr.position;
-            tr_girpObj.localPosition = new Vector3(0f, 0f, 0f);
+            tr_girpObj.localPosition = new Vector3(0f, 0f, 0.0f);
             tr_girpObj.localRotation = Quaternion.identity;
             gripObj.GetComponent<ArrowBlend>().OnGripPose(skeleton);
 
@@ -93,15 +93,15 @@ public class Grip : MonoBehaviour
         //공통 부분
         Rigidbody rb_girpObj = gripObj.GetComponent<Rigidbody>();
         Transform tr_girpObj = gripObj.GetComponent<Transform>();
-        rb_girpObj.isKinematic = false;
-        rb_girpObj.useGravity = true;
+        rb_girpObj.isKinematic = true;
+        rb_girpObj.useGravity = false;
         tr_girpObj.SetParent(null);
 
         //추가부분
         if (what == "Bow")
         {
             gripObj.GetComponent<BowBlend>().OffGripPose(skeleton);
-
+            gripObj.GetComponent<Bow>().OffCollider();
             isGripBow = false;
         }
         else if (what == "Arrow")
@@ -213,7 +213,7 @@ public class Grip : MonoBehaviour
             }
 
             //공통사항
-            other.gameObject.GetComponent<Outline>().OutlineWidth = 0f;
+            approachObj.GetComponent<Outline>().OutlineWidth = 2f;
             isApproach = false;
             approachObj = null;     
         }    
