@@ -30,7 +30,6 @@ public class Bow : MonoBehaviour
     {
         m_Animator = GetComponent<Animator>();
         steamVR_Skeleton_Poser = GetComponent<SteamVR_Skeleton_Poser>();
-        //CreateArrow();
     }
     private void Update()
     {
@@ -115,5 +114,18 @@ public class Bow : MonoBehaviour
         m_CurrentArrow.Fire(m_PulValue);
         m_CurrentArrow = null;
     }
-    
+
+    [Header("Collider")]
+    public Collider bowBend;
+    public Collider aroowSet;   
+    public void OnCollider()
+    {
+        bowBend.enabled = true;
+        aroowSet.enabled = true;
+    }
+    public void OffCollider()
+    {
+        bowBend.enabled = false;
+        aroowSet.enabled = false;
+    }
 }

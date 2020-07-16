@@ -85,7 +85,6 @@ public class SteamInput : MonoBehaviour
             }
             else if (m_PullAction.GetStateUp(m_RightHandPose.inputSource))
             {
-
                 //활쏘기
                 if (leftGrip.isGripBow == true)
                 {
