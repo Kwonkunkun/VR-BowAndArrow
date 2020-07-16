@@ -192,7 +192,7 @@ public class Grip : MonoBehaviour
             else if(other.CompareTag("IntroBall"))
             {
                 Debug.Log("Approach IntroBall");
-                SceneManager.LoadScene("Intro");
+                approachObj.GetComponent<GoIntro>().ScenePass();
             }
         }     
         else if(other.CompareTag("BowBend"))
