@@ -12,6 +12,8 @@ TagManager:
   - Bow_ArrowSet
   - ThrowObj
   - BowBend
+  - FxTemporaire
+  - StartBall
   layers:
   - Default
   - TransparentFX

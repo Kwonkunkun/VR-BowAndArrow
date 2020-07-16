@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_BowAndArrow/Main.unity
-    guid: 0bdc2251efd355d45add28195d99d336
+    path: Assets/01.Scenes/Intro.unity
+    guid: 0698c02d2ddabb949bcc4b8f3f78a913
+  - enabled: 1
+    path: Assets/01.Scenes/RealMain.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
