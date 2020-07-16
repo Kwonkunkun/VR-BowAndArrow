@@ -14,6 +14,8 @@ TagManager:
   - BowBend
   - FxTemporaire
   - StartBall
+  - Reload
+  - IntroBall
   layers:
   - Default
   - TransparentFX

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Net.Sockets;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR;
 
 public class Grip : MonoBehaviour
@@ -159,7 +160,7 @@ public class Grip : MonoBehaviour
         if (isGrip == true || isApproach == true)
             return;    
 
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall") || other.CompareTag("IntroBall"))
         {
             //공통사항
             approachObj = other.gameObject;
@@ -188,6 +189,11 @@ public class Grip : MonoBehaviour
                 Debug.Log("Approach StartBall");
                 approachObj.GetComponent<IntroScript>().ScenePass();
             }
+            else if(other.CompareTag("IntroBall"))
+            {
+                Debug.Log("Approach IntroBall");
+                SceneManager.LoadScene("Intro");
+            }
         }     
         else if(other.CompareTag("BowBend"))
         {
@@ -199,7 +205,7 @@ public class Grip : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall") || other.CompareTag("IntroBall"))
         {
             //세부사항
             if (other.CompareTag("Bow"))
@@ -217,7 +223,10 @@ public class Grip : MonoBehaviour
                 Debug.Log("Out ThrowObj Space");
                 isInThrowObjSpace = false;
             }
+            else if (other.CompareTag("IntroBall"))
+            {
 
+            }
             //공통사항
             approachObj.GetComponent<Outline>().OutlineWidth = 2f;
             isApproach = false;

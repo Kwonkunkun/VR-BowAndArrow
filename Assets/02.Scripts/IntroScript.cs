@@ -25,6 +25,6 @@ public class IntroScript : MonoBehaviour
         effect.SetActive(true);
         auraVolume.scatteringInjection.strength = 0.0f;
         yield return new WaitForSeconds(timeOfPassScene);
-        SceneManager.LoadScene("RealMain");
+        SceneManager.LoadScene("Main");
     }
 }
