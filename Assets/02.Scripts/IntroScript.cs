@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class IntroScript : MonoBehaviour
 {
+    public GameObject effect;
     public float timeOfPassScene;
     public AuraVolume auraVolume;
     private void Start()
@@ -21,6 +22,7 @@ public class IntroScript : MonoBehaviour
 
     IEnumerator PassScene()
     {
+        effect.SetActive(true);
         auraVolume.scatteringInjection.strength = 0.0f;
         yield return new WaitForSeconds(timeOfPassScene);
         SceneManager.LoadScene("RealMain");
