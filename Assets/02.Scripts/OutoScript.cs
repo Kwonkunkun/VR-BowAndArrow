@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class OutoScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Light light;
+    public float minAngle;
+    public float maxAngle;
+    public float spotAngleValue;
+    private void FixedUpdate()
     {
-        
+        if (light.spotAngle < maxAngle)
+        {
+            light.spotAngle += spotAngleValue;
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
