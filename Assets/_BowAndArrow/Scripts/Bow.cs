@@ -39,6 +39,7 @@ public class Bow : MonoBehaviour
         m_PulValue = CalculaterPull(m_PullingHand);
         m_PulValue = Mathf.Clamp(m_PulValue, 0.0f, 1.0f);
 
+        Debug.Log(m_PulValue);
         m_Animator.SetFloat("Blend", m_PulValue);
 
         //pose
@@ -108,6 +109,8 @@ public class Bow : MonoBehaviour
 
         m_PulValue = 0.0f;
         m_Animator.SetFloat("Blend", 0);
+        //pose
+        steamVR_Skeleton_Poser.SetBlendingBehaviourValue("ShotPose", m_PulValue);
     }
     private void FireArrow()
     {

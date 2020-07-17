@@ -17,7 +17,7 @@ public class Grip : MonoBehaviour
     public bool isInArrowSpace = false;
     public bool isInThrowObjSpace = false;
     public GameObject approachObj = null;
-
+   
     [Header("Grip")]
     public bool isGrip = false;
     public bool isGripBow = false;
@@ -164,7 +164,8 @@ public class Grip : MonoBehaviour
         {
             //공통사항
             approachObj = other.gameObject;
-            approachObj.GetComponent<Outline>().OutlineWidth = 6f;
+            if (approachObj != null)
+                approachObj.GetComponent<Outline>().OutlineWidth = 6f;
             isApproach = true;
 
             //세부사항
@@ -198,6 +199,9 @@ public class Grip : MonoBehaviour
         else if(other.CompareTag("BowBend"))
         {
             Debug.Log("In BowBend Space");
+            approachObj = other.gameObject;
+            if (approachObj != null)
+                approachObj.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("ScaleUp", true);
             isInBowBend = true;
             isApproach = true;
         }       
@@ -228,7 +232,8 @@ public class Grip : MonoBehaviour
 
             }
             //공통사항
-            approachObj.GetComponent<Outline>().OutlineWidth = 2f;
+            if (approachObj != null)
+                approachObj.GetComponent<Outline>().OutlineWidth = 2f;
             isApproach = false;
             approachObj = null;     
         }    
@@ -236,6 +241,9 @@ public class Grip : MonoBehaviour
         else if (other.CompareTag("BowBend"))
         {
             Debug.Log("Out BowBend Space");
+            if(approachObj !=null)
+                approachObj.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("ScaleUp", false);
+            approachObj = null;
             isInBowBend = false;
             isApproach = false;
         }
