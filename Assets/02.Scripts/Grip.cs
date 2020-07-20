@@ -160,7 +160,8 @@ public class Grip : MonoBehaviour
         if (isGrip == true || isApproach == true)
             return;    
 
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall") || other.CompareTag("IntroBall"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || 
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby"))
         {
             //공통사항
             approachObj = other.gameObject;
