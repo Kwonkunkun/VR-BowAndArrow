@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 359244379870179770}
   m_Layer: 0
   m_Name: prefab_arrow_military_4
-  m_TagString: Untagged
+  m_TagString: Tip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352837531147517166}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.030143278
   m_Height: 0.11349177
@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 4259385775479434728}
   - component: {fileID: 2487042709910117051}
   - component: {fileID: 3001902477014182997}
-  - component: {fileID: 6085950750354900161}
   - component: {fileID: 2132558910056624613}
   - component: {fileID: 5879340534002598127}
   - component: {fileID: 1547231489601310276}
@@ -163,20 +162,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!136 &6085950750354900161
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3731127714113719525}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.02
-  m_Height: 0.15765938
-  m_Direction: 2
-  m_Center: {x: -0.000000026880754, y: 0.00000001150279, z: -0.028829694}
 --- !u!114 &2132558910056624613
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -23,7 +23,7 @@ public class Arrow : MonoBehaviour
         m_Rigidbody.MoveRotation(Quaternion.LookRotation(m_Rigidbody.velocity, transform.up));
     }
 
-    private void Stop()
+    public void Stop()
     {
         Debug.Log("Arrow Stop");
         m_IsStopped = true;
@@ -45,11 +45,4 @@ public class Arrow : MonoBehaviour
         Destroy(gameObject, 5.0f);
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Environment"))
-        {
-            Stop();
-        }
-    }
 }
