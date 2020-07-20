@@ -222,7 +222,8 @@ public class Grip : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || other.CompareTag("StartBall") || other.CompareTag("IntroBall"))
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby"))
         {
             //세부사항
             if (other.CompareTag("Bow"))

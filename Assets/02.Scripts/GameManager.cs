@@ -33,6 +33,10 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    [Header("Score")]
+    public int score = 0;
+
+    [Header("Target Move")]
     public Transform target;
     public Transform easy;
     public Transform middle;
