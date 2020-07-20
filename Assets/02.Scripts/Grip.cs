@@ -16,6 +16,7 @@ public class Grip : MonoBehaviour
     public bool isInBowBend = false;
     public bool isInArrowSpace = false;
     public bool isInThrowObjSpace = false;
+    public bool isInReloadSpace = false;
     public GameObject approachObj = null;
    
     [Header("Grip")]
@@ -161,7 +162,7 @@ public class Grip : MonoBehaviour
             return;    
 
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || 
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby"))
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || other.CompareTag("Reload"))
         {
             //공통사항
             approachObj = other.gameObject;
@@ -184,6 +185,11 @@ public class Grip : MonoBehaviour
             {
                 Debug.Log("In ThrowObj Space");
                 isInThrowObjSpace = true;
+            }
+            else if(other.CompareTag("Reload"))
+            {
+                Debug.Log("In Reload Space");
+                isInReloadSpace = true;
             }
             if (SteamInput.instance.isGoingScene == false)
             {
@@ -223,7 +229,7 @@ public class Grip : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby"))
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || other.CompareTag("Reload"))
         {
             //세부사항
             if (other.CompareTag("Bow"))
@@ -241,9 +247,10 @@ public class Grip : MonoBehaviour
                 Debug.Log("Out ThrowObj Space");
                 isInThrowObjSpace = false;
             }
-            else if (other.CompareTag("IntroBall"))
+            else if (other.CompareTag("Reload"))
             {
-
+                Debug.Log("In Reload Space");
+                isInReloadSpace = false;
             }
             //공통사항
             if (approachObj != null)

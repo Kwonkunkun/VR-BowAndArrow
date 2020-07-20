@@ -52,8 +52,8 @@ public class GameManager : MonoBehaviour
 
         if(isMove == true)
         {
-            target.position = Vector3.Lerp(target.position, targetTo.position, 0.5f);
-            if (Vector3.Distance(target.position, targetTo.position) < 2.0f)
+            target.position = Vector3.Lerp(target.position, targetTo.position, 0.05f);
+            if (Vector3.Distance(target.position, targetTo.position) < 0.1f)
                 isMove = false;
         }
     }

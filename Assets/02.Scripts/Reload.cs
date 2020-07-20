@@ -15,5 +15,7 @@ public class Reload : MonoBehaviour
             GameObject arrow = Instantiate(arrow_grip, tr_tong);
             arrow.transform.position = tr_arrow_pos[i].position;
         }
+
+        //리로드 사운드 자리
     }
 }
