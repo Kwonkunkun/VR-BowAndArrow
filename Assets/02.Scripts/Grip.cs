@@ -184,16 +184,28 @@ public class Grip : MonoBehaviour
                 Debug.Log("In ThrowObj Space");
                 isInThrowObjSpace = true;
             }
-            else if (other.CompareTag("StartBall"))
+            if (SteamInput.instance.isGoingScene == false)
             {
-                //여기서 시작 
-                Debug.Log("Approach StartBall");
-                approachObj.GetComponent<IntroScript>().ScenePass();
-            }
-            else if(other.CompareTag("IntroBall"))
-            {
-                Debug.Log("Approach IntroBall");
-                approachObj.GetComponent<GoIntro>().ScenePass();
+                if (other.CompareTag("Museum"))
+                {
+                    //여기서 시작 
+                    Debug.Log("Approach Museum Ball");
+                    approachObj.GetComponent<PassSceneScript>().ScenePass("Museum");
+                    SteamInput.instance.isGoingScene = true;
+                }
+                else if (other.CompareTag("Experience"))
+                {
+                    Debug.Log("Approach Experience Ball");
+                    approachObj.GetComponent<PassSceneScript>().ScenePass("Experience");
+                    SteamInput.instance.isGoingScene = true;
+
+                }
+                else if(other.CompareTag("Lobby"))
+                {
+                    Debug.Log("Approach Lobby Ball");
+                    approachObj.GetComponent<PassSceneScript>().ScenePass("Lobby");
+                    SteamInput.instance.isGoingScene = true;
+                }
             }
         }     
         else if(other.CompareTag("BowBend"))

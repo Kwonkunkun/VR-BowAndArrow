@@ -5,26 +5,21 @@ using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class IntroScript : MonoBehaviour
+public class PassSceneScript : MonoBehaviour
 {
     public GameObject effect;
     public float timeOfPassScene;
-    public AuraVolume auraVolume;
-    private void Start()
-    {
-        //StartCoroutine(PassScene());
-    }
-    public void ScenePass()
+
+    public void ScenePass(string what)
     {
         Debug.Log("PassScene");
-        StartCoroutine(PassScene());
+        StartCoroutine(PassScene(what));
     }
 
-    IEnumerator PassScene()
+    IEnumerator PassScene(string what)
     {
         effect.SetActive(true);
-        auraVolume.scatteringInjection.strength = 0.0f;
         yield return new WaitForSeconds(timeOfPassScene);
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene(what);
     }
 }

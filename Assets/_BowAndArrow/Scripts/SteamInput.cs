@@ -6,6 +6,8 @@ public class SteamInput : MonoBehaviour
     #region 싱글톤
     private static SteamInput m_instance;
 
+
+    public bool isGoingScene = false;
     public static SteamInput instance
     {
         get

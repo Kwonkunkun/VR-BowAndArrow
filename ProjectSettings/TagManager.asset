@@ -13,9 +13,10 @@ TagManager:
   - ThrowObj
   - BowBend
   - FxTemporaire
-  - StartBall
   - Reload
-  - IntroBall
+  - Museum
+  - Experience
+  - Lobby
   layers:
   - Default
   - TransparentFX
