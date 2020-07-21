@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
@@ -51,8 +52,15 @@ public class Arrow : MonoBehaviour
         m_Rigidbody.AddForce(transform.forward * (pulValue * m_Speed));
 
         line.enabled = true;
-        
-        Destroy(gameObject, 5.0f);
+
+        StartCoroutine(Die());
+        //Destroy(gameObject, 5.0f);
     }
 
+    IEnumerator Die()
+    {
+        yield return new WaitForSeconds(2.0f);
+        GameManager.instance.UpdateScore(false);
+        DestroyImmediate(gameObject);
+    }
 }

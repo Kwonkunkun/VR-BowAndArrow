@@ -34,9 +34,6 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    [Header("Score")]
-    public int score = 0;
-
     [Header("Target Move")]
     public Transform target;
     public Transform easy;
@@ -49,6 +46,15 @@ public class GameManager : MonoBehaviour
 
     [Header("Level UI")]
     public Image[] levelChecker = new Image[3];
+
+    [Header("Score")]
+    public int currentCount = 0;
+    public int maxCount = 5;
+
+    [Header("Score UI")]
+    public Image[] sucessUI = new Image[5];
+    public Image[] failUI_1 = new Image[5];
+    public Image[] failUI_2 = new Image[5];
 
     private void FixedUpdate()
     {
@@ -71,8 +77,14 @@ public class GameManager : MonoBehaviour
     public void GameInit()
     {
         Debug.Log("GameInit");
+        currentCount = 0;      
+        for(int i =0; i<maxCount; i++)
+        {
+            sucessUI[i].fillAmount = 0;
+            failUI_1[i].fillAmount = 0;
+            failUI_2[i].fillAmount = 0;
+        }
     }
-
     public void MoveTarget()
     {
         levelChecker[currentLevel].fillAmount = 0;
@@ -87,5 +99,46 @@ public class GameManager : MonoBehaviour
             targetTo = hard;
 
         isMove = true;
+    }
+    public void UpdateScore(bool isTargetHit)
+    {
+        Debug.Log("UpdateScore");
+
+        if (currentCount == 0)
+            GameInit();
+
+        if (isTargetHit == true)
+            StartCoroutine(DrawCircle(currentCount));
+        
+        else
+            StartCoroutine(DrawX_1(currentCount));
+        
+        currentCount++;
+        currentCount %= maxCount;
+    }
+
+    IEnumerator DrawCircle(int num)
+    {
+        sucessUI[num].fillAmount += 0.05f;
+        yield return new WaitForSeconds(0.05f);
+        if(sucessUI[num].fillAmount !=1)
+            StartCoroutine(DrawCircle(num));
+    }
+    
+    IEnumerator DrawX_1(int num)
+    {
+        failUI_1[num].fillAmount += 0.05f;
+        yield return new WaitForSeconds(0.025f);
+        if (failUI_1[num].fillAmount != 1)
+            StartCoroutine(DrawX_1(num));
+        else if (failUI_1[num].fillAmount == 1)
+            StartCoroutine(DrawX_2(num));
+    }
+    IEnumerator DrawX_2(int num)
+    {
+        failUI_2[num].fillAmount += 0.05f;
+        yield return new WaitForSeconds(0.025f);
+        if (failUI_2[num].fillAmount != 1)
+            StartCoroutine(DrawX_1(num));
     }
 }
