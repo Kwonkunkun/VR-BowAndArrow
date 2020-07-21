@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32803b62929a22f46a1bc657e722a268, type: 3}
+  m_Name: BF1FFE7B-E929-48B7-B512-4F7F6DBD2B18
+  m_EditorClassIdentifier: 
+  objectName: Nar1
+  id: 948652429
+  guid: BF1FFE7B-E929-48B7-B512-4F7F6DBD2B18
