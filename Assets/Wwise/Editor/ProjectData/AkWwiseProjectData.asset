@@ -89,7 +89,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 83493fdcc31a9f469758758237f70a58
     GuidInternal: 
-    m_lastTime: -8586072824785539520
+    m_lastTime: -8586063803965192842
     List:
     - name: ArrowAir_Event
       guid: 7d4e4dbdfc097c4ab253857ab7a43944
@@ -184,7 +184,7 @@ MonoBehaviour:
       - ElementName: BGM_Event
         ObjectType: 3
       Path: Default Work Unit\BGM_Event
-      maxAttenuation: 0
+      maxAttenuation: 100
       maxDuration: 125.973335
       minDuration: 125.973335
     - name: BGM1
@@ -197,8 +197,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\BGM1
       maxAttenuation: 0
-      maxDuration: 33.33087
-      minDuration: 33.33087
+      maxDuration: 0
+      minDuration: 0
     - name: BowGrip
       guid: 34e2b28f2fcb944f8c25b18085ff7510
       id: 3576952471
@@ -221,8 +221,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Nar1
       maxAttenuation: 0
-      maxDuration: 12.34648
-      minDuration: 12.34648
+      maxDuration: 0
+      minDuration: 0
     - name: Nar22
       guid: d89996e3d83a2c418b20c7e76de5ea97
       id: 2437204664
@@ -382,6 +382,9 @@ MonoBehaviour:
     GuidInternal: 
     m_lastTime: -8586074685655179452
     List: []
-  ExpandedItems: []
+  ExpandedItems:
+  - /VRArrow_WwiseProject
+  - /VRArrow_WwiseProject/Events
+  - /VRArrow_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

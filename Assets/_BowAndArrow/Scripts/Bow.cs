@@ -25,7 +25,11 @@ public class Bow : MonoBehaviour
     private string whatIsHand = null;
     private SteamVR_Skeleton_Poser steamVR_Skeleton_Poser;
 
-
+    #region
+    public AK.Wwise.Event InAirSound;
+    public AK.Wwise.Event PullBackSound;
+    public AK.Wwise.Event RealeseSound;
+    #endregion
     private void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -96,14 +100,19 @@ public class Bow : MonoBehaviour
 
         if (distance >= m_GrabThreshold)
             return;
-
+        PullBackSound.Post(gameObject);
         m_PullingHand = hand;
     }
     public void Release()
     {
         Debug.Log("Release");
-        if (m_PulValue > 0.25f && m_CurrentArrow != null)
-            FireArrow();
+
+        if (m_PulValue > 0.25f)
+        {
+            if(m_CurrentArrow != null)
+                FireArrow();
+            RealeseSound.Post(gameObject);
+        }
 
         m_PullingHand = null;
 
@@ -114,6 +123,7 @@ public class Bow : MonoBehaviour
     }
     private void FireArrow()
     {
+        InAirSound.Post(gameObject);
         m_CurrentArrow.Fire(m_PulValue);
         m_CurrentArrow = null;
     }

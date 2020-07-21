@@ -6,6 +6,7 @@ public class Target : MonoBehaviour
 {
     //타격 이펙트
     public GameObject hit_effect_prefab;
+    public AK.Wwise.Event HitSoundEvent;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class Target : MonoBehaviour
             //접촉한 부위의 위치에 파티클을 뿌려준다.
             GameObject hit_effect = Instantiate(hit_effect_prefab, pos, Quaternion.identity);
             other.gameObject.GetComponent<Arrow>().Stop();
+            HitSoundEvent.Post(gameObject);
             Destroy(hit_effect, 0.5f);
             Destroy(other.gameObject);
         }

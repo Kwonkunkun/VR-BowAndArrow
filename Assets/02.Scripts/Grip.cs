@@ -10,7 +10,16 @@ public class Grip : MonoBehaviour
     Transform tr;
     SteamVR_Behaviour_Skeleton skeleton;
 
-    [Header ("Approach")]
+    #region WwiseSoundInput
+    public AK.Wwise.Event ArrowNockSound;
+    public AK.Wwise.Event ArrowSpawnSound;
+   // public AK.Wwise.Event PullBackSound;
+    public AK.Wwise.Event ArrowAirSound;
+    public AK.Wwise.Event BowGripSound;
+    #endregion
+
+
+    [Header("Approach")]
     public bool isApproach = false;
     public bool isInBowSpace = false;
     public bool isInBowBend = false;
@@ -18,7 +27,7 @@ public class Grip : MonoBehaviour
     public bool isInThrowObjSpace = false;
     public bool isInReloadSpace = false;
     public GameObject approachObj = null;
-   
+
     [Header("Grip")]
     public bool isGrip = false;
     public bool isGripBow = false;
@@ -60,21 +69,21 @@ public class Grip : MonoBehaviour
             tr_girpObj.position = tr.position;
             tr_girpObj.localPosition = new Vector3(0f, 0f, 0f);
             tr_girpObj.localRotation = Quaternion.identity;
-
+            BowGripSound.Post(gameObject);
             gripObj.GetComponent<BowBlend>().OnGripPose(skeleton);
             gripObj.GetComponent<Bow>().OnCollider();
             isGripBow = true;
         }
         else if (what == "Arrow")
         {
+            ArrowSpawnSound.Post(gameObject);
             tr_girpObj.position = tr.position;
             tr_girpObj.localPosition = new Vector3(0f, 0f, 0.0f);
             tr_girpObj.localRotation = Quaternion.identity;
-            gripObj.GetComponent<ArrowBlend>().OnGripPose(skeleton);
-
+            gripObj.GetComponent<ArrowBlend>().OnGripPose(skeleton);        
             isGripArrow = true;
         }
-        else if(what == "ThrowObj")
+        else if (what == "ThrowObj")
         {
             //여기에 grip pose 애니매이션 ㄲ
 
@@ -126,11 +135,13 @@ public class Grip : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //화살걸기
-        if (other.CompareTag("Bow_ArrowSet") && isGripArrow == true 
+        if (other.CompareTag("Bow_ArrowSet") && isGripArrow == true
             && (SteamInput.instance.leftGrip.isGripBow == true || SteamInput.instance.rightGrip.isGripBow == true))
         {
+
             Bow bow = null;
             string whatHand = null;
+            PlayNockSound();
             if (SteamInput.instance.leftGrip.isGripBow == true)
             {
                 bow = SteamInput.instance.leftGrip.gripObj.GetComponent<Bow>();
@@ -159,10 +170,10 @@ public class Grip : MonoBehaviour
         }
 
         if (isGrip == true || isApproach == true)
-            return;    
+            return;
 
-        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || 
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || 
+        if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
             other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
         {
             //공통사항
@@ -187,12 +198,12 @@ public class Grip : MonoBehaviour
                 Debug.Log("In ThrowObj Space");
                 isInThrowObjSpace = true;
             }
-            else if(other.CompareTag("Reload"))
+            else if (other.CompareTag("Reload"))
             {
                 Debug.Log("In Reload Space");
                 isInReloadSpace = true;
             }
-            else if(other.CompareTag("LevelChanger"))
+            else if (other.CompareTag("LevelChanger"))
             {
                 Debug.Log("In LevelChanger Space");
                 GameManager.instance.MoveTarget();
@@ -213,15 +224,15 @@ public class Grip : MonoBehaviour
                     SteamInput.instance.isGoingScene = true;
 
                 }
-                else if(other.CompareTag("Lobby"))
+                else if (other.CompareTag("Lobby"))
                 {
                     Debug.Log("Approach Lobby Ball");
                     approachObj.GetComponent<PassSceneScript>().ScenePass("Lobby");
                     SteamInput.instance.isGoingScene = true;
                 }
             }
-        }     
-        else if(other.CompareTag("BowBend"))
+        }
+        else if (other.CompareTag("BowBend"))
         {
             Debug.Log("In BowBend Space");
             approachObj = other.gameObject;
@@ -229,13 +240,13 @@ public class Grip : MonoBehaviour
                 approachObj.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("ScaleUp", true);
             isInBowBend = true;
             isApproach = true;
-        }       
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || 
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
             other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
         {
             //세부사항
@@ -259,23 +270,34 @@ public class Grip : MonoBehaviour
                 Debug.Log("In Reload Space");
                 isInReloadSpace = false;
             }
-            
+
             //공통사항
             if (approachObj != null)
                 approachObj.GetComponent<Outline>().OutlineWidth = 2f;
             isApproach = false;
-            approachObj = null;     
-        }    
-       
+            approachObj = null;
+        }
+
         else if (other.CompareTag("BowBend"))
         {
             Debug.Log("Out BowBend Space");
-            if(approachObj !=null)
+            if (approachObj != null)
                 approachObj.transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("ScaleUp", false);
             approachObj = null;
             isInBowBend = false;
             isApproach = false;
         }
+    }
+    #endregion
+
+
+    #region 사운드 재생 함수
+    void PlayNockSound()
+    {
+        ArrowNockSound.Post(gameObject);
+
+
+
     }
     #endregion
 }
