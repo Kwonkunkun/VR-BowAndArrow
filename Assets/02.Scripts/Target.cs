@@ -21,6 +21,7 @@ public class Target : MonoBehaviour
         if (other.collider.tag == "Tip")
         {
             Debug.Log("arrow in Target");
+            GameManager.instance.score += 1;
             Vector3 pos = other.contacts[0].point;
             //접촉한 부위의 위치에 파티클을 뿌려준다.
             GameObject hit_effect = Instantiate(hit_effect_prefab, pos, Quaternion.identity);

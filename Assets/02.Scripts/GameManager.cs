@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void GameInit()
+    {
+        Debug.Log("GameInit");
+    }
+
     public void MoveTarget()
     {
         levelChecker[currentLevel].fillAmount = 0;
