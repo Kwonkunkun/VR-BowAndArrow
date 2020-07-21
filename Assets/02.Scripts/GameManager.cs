@@ -59,10 +59,10 @@ public class GameManager : MonoBehaviour
         {
             //UI채우기
             if(levelChecker[currentLevel].fillAmount != 1.0f)
-                levelChecker[currentLevel].fillAmount += 0.2f;
+                levelChecker[currentLevel].fillAmount += 0.05f;
 
             //타겟 움직이기
-            target.position = Vector3.Lerp(target.position, targetTo.position, 0.05f);
+            target.position = Vector3.Lerp(target.position, targetTo.position, 0.02f);
             if (Vector3.Distance(target.position, targetTo.position) < 0.1f)
                 isMove = false;
         }
@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
     {
         levelChecker[currentLevel].fillAmount = 0;
         currentLevel++;
-        currentLevel /= maxGameLevel;
+        currentLevel %= maxGameLevel;
 
         if (currentLevel == 0)
             targetTo = easy;
