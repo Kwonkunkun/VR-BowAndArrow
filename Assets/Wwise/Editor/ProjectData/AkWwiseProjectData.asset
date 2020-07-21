@@ -1,0 +1,387 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c64705b893b655e4c99822b04df6b960, type: 3}
+  m_Name: AkWwiseProjectData
+  m_EditorClassIdentifier: 
+  AcousticTextureWwu:
+  - PhysicalPath: Virtual Acoustics\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 50f3e488ef0c3b4087caf735ddef53a9
+    GuidInternal: 
+    m_lastTime: -8586074685655139565
+    List: []
+  AuxBusWwu:
+  - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 9dac75ed22ed0a44a841f4381e9fcfe9
+    GuidInternal: 
+    m_lastTime: -8586074685655458708
+    List: []
+  BankWwu:
+  - PhysicalPath: SoundBanks\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 8e7befd7753a664899d9ce8fbd5b8f90
+    GuidInternal: 
+    m_lastTime: -8586072838688713552
+    List:
+    - name: SB_ArrowResult
+      guid: bbe45a945c0d7f4b9cd99774ed3088e0
+      id: 1501255583
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SB_ArrowResult
+        ObjectType: 7
+      Path: Default Work Unit\SB_ArrowResult
+    - name: SB_ArrowSound
+      guid: 2a7ff521a9a4774c9d7ba4d6c70abd29
+      id: 3256071817
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SB_ArrowSound
+        ObjectType: 7
+      Path: Default Work Unit\SB_ArrowSound
+    - name: SB_BGMEvent
+      guid: 2a12c4090bc84d4a8d3fa841f9b0f53f
+      id: 3231291807
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SB_BGMEvent
+        ObjectType: 7
+      Path: Default Work Unit\SB_BGMEvent
+  - PhysicalPath: SoundBanks\SB_Nar3.wwu
+    ParentPhysicalPath: 
+    guid: 48cd0833eb494448a8ee8a6cfa74bec8
+    GuidInternal: 
+    m_lastTime: -8586072824785469704
+    List:
+    - name: Nar1
+      guid: 7bfe1fbf29e9b748b5124f7f6dbd2b18
+      id: 948652429
+      PathAndIcons:
+      - ElementName: SB_Nar3
+        ObjectType: 12
+      - ElementName: Nar1
+        ObjectType: 7
+      Path: SB_Nar3\Nar1
+    - name: SB_Nar3
+      guid: 0378fe42903ec84dab83edf81dd008a1
+      id: 2513567111
+      PathAndIcons:
+      - ElementName: SB_Nar3
+        ObjectType: 12
+      - ElementName: SB_Nar3
+        ObjectType: 7
+      Path: SB_Nar3\SB_Nar3
+  EventWwu:
+  - PhysicalPath: Events\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 83493fdcc31a9f469758758237f70a58
+    GuidInternal: 
+    m_lastTime: -8586072824785539520
+    List:
+    - name: ArrowAir_Event
+      guid: 7d4e4dbdfc097c4ab253857ab7a43944
+      id: 1876790197
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowAir_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowAir_Event
+      maxAttenuation: 0
+      maxDuration: 1
+      minDuration: 0.520363
+    - name: ArrowFallGround_Event
+      guid: 1f5970a620a88a4fac1393ed7317e703
+      id: 1601986307
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowFallGround_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowFallGround_Event
+      maxAttenuation: 100
+      maxDuration: 1.171338
+      minDuration: 0.843152
+    - name: ArrowHit_Event
+      guid: ce39048951970f48be241206cb7f3cf9
+      id: 2659507634
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowHit_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowHit_Event
+      maxAttenuation: 0
+      maxDuration: 1.165578
+      minDuration: 0.737914
+    - name: ArrowNock_Event
+      guid: 6b43ad0c5e14f440aed5d4b374ea431a
+      id: 3210970906
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowNock_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowNock_Event
+      maxAttenuation: 0
+      maxDuration: 0.890159
+      minDuration: 0.209252
+    - name: ArrowPullBack_Event
+      guid: 9e5b176da81c664eb24f29dabdb118a0
+      id: 926319793
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowPullBack_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowPullBack_Event
+      maxAttenuation: 0
+      maxDuration: 1.4539
+      minDuration: 0.554626
+    - name: ArrowRealese_Event
+      guid: 6c5b3a6675fe3d4bad9ca20c63d6e94b
+      id: 544038300
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowRealese_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowRealese_Event
+      maxAttenuation: 0
+      maxDuration: 1.770658
+      minDuration: 0.905238
+    - name: ArrowSpawn_Event
+      guid: ae21ca10040b034eb6c660dd63ef7b5c
+      id: 3984451668
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowSpawn_Event
+        ObjectType: 3
+      Path: Default Work Unit\ArrowSpawn_Event
+      maxAttenuation: 100
+      maxDuration: 1.749342
+      minDuration: 0.701134
+    - name: BGM_Event
+      guid: fda240ef04f1e74cab10f2259d6ce491
+      id: 1799075776
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BGM_Event
+        ObjectType: 3
+      Path: Default Work Unit\BGM_Event
+      maxAttenuation: 0
+      maxDuration: 125.973335
+      minDuration: 125.973335
+    - name: BGM1
+      guid: a5b10e6934609c478af964358a178413
+      id: 1189781958
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BGM1
+        ObjectType: 3
+      Path: Default Work Unit\BGM1
+      maxAttenuation: 0
+      maxDuration: 33.33087
+      minDuration: 33.33087
+    - name: BowGrip
+      guid: 34e2b28f2fcb944f8c25b18085ff7510
+      id: 3576952471
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BowGrip
+        ObjectType: 3
+      Path: Default Work Unit\BowGrip
+      maxAttenuation: 0
+      maxDuration: 0.076349
+      minDuration: 0.076349
+    - name: Nar1
+      guid: 2a0341d8107eb943bc8fc113a903f90c
+      id: 948652429
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Nar1
+        ObjectType: 3
+      Path: Default Work Unit\Nar1
+      maxAttenuation: 0
+      maxDuration: 12.34648
+      minDuration: 12.34648
+    - name: Nar22
+      guid: d89996e3d83a2c418b20c7e76de5ea97
+      id: 2437204664
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Nar22
+        ObjectType: 3
+      Path: Default Work Unit\Nar22
+      maxAttenuation: 0
+      maxDuration: 5.545
+      minDuration: 5.545
+    - name: Nar3
+      guid: 8fd14f92d0049248a61c2cf37f8f6efb
+      id: 948652431
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Nar3
+        ObjectType: 3
+      Path: Default Work Unit\Nar3
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: NarSwitch_Event
+      guid: 582d2b58b810ec4aa25e9b4502c99e87
+      id: 2115211893
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: NarSwitch_Event
+        ObjectType: 3
+      Path: Default Work Unit\NarSwitch_Event
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ShotBow_Event
+      guid: 916e0a932e41664cb2254a573236c4a7
+      id: 3978674182
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ShotBow_Event
+        ObjectType: 3
+      Path: Default Work Unit\ShotBow_Event
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  RtpcWwu:
+  - PhysicalPath: Game Parameters\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 2c006a2ca0739a4099cd2ce6d29851c5
+    GuidInternal: 
+    m_lastTime: -8586073114890534102
+    List:
+    - name: BGM_Parameter
+      guid: fc611469b441ff4eb3c0c52b3c8f4d34
+      id: 3805275197
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: BGM_Parameter
+        ObjectType: 13
+      Path: Default Work Unit\BGM_Parameter
+    - name: PR_PullBack
+      guid: 5cf97ba002c4c24d8d59c06be3f3f2fd
+      id: 891400966
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PR_PullBack
+        ObjectType: 13
+      Path: Default Work Unit\PR_PullBack
+    - name: PR_ShotBow
+      guid: b3f2cc1fd9f96243bdef3d803c0b9f44
+      id: 877766230
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PR_ShotBow
+        ObjectType: 13
+      Path: Default Work Unit\PR_ShotBow
+  StateWwu:
+  - PhysicalPath: States\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: eb093c42ea8d7f4c9e33ec6bb1c3eb7b
+    GuidInternal: 
+    m_lastTime: -8586074685655398878
+    List: []
+  SwitchWwu:
+  - PhysicalPath: Switches\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: fb290f847bf78949bc14bd44d383810b
+    GuidInternal: 
+    m_lastTime: -8586073025467335487
+    List:
+    - name: SW_ArrowProgress
+      guid: 53c704fb88067d4c94a34252c94f1242
+      id: 210977264
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SW_ArrowProgress
+        ObjectType: 11
+      Path: Default Work Unit\SW_ArrowProgress
+      values:
+      - name: Air
+        guid: 0bc47833dccf6b42b083e44631248a2a
+        id: 1050421051
+        PathAndIcons:
+        - ElementName: Air
+          ObjectType: 10
+      - name: PullBack
+        guid: 93576aff0672a746a6c39b1e035b2008
+        id: 830775945
+        PathAndIcons:
+        - ElementName: PullBack
+          ObjectType: 10
+      - name: Realease
+        guid: a0575b07d4560f4680918a1df11f0f0e
+        id: 3095539507
+        PathAndIcons:
+        - ElementName: Realease
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: SW_ArrowResult
+      guid: fc8b8766938cc042ab6c7a3a36737c6b
+      id: 3475700082
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SW_ArrowResult
+        ObjectType: 11
+      Path: Default Work Unit\SW_ArrowResult
+      values:
+      - name: Fall
+        guid: 8a51003f15b2254880d7742ed9de569f
+        id: 2512384458
+        PathAndIcons:
+        - ElementName: Fall
+          ObjectType: 10
+      - name: Hit
+        guid: 8e7b5784b3253348b6d8e74638d74ae0
+        id: 1116398592
+        PathAndIcons:
+        - ElementName: Hit
+          ObjectType: 10
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+  TriggerWwu:
+  - PhysicalPath: Triggers\Default Work Unit.wwu
+    ParentPhysicalPath: 
+    guid: 64ce7ff746aae543b8721f14d8e9aad8
+    GuidInternal: 
+    m_lastTime: -8586074685655179452
+    List: []
+  ExpandedItems: []
+  autoPopulateEnabled: 1
+  CurrentPluginConfig: 
