@@ -19,6 +19,7 @@ public class Grip : MonoBehaviour
     #endregion
 
 
+
     [Header("Approach")]
     public bool isApproach = false;
     public bool isInBowSpace = false;
@@ -74,6 +75,8 @@ public class Grip : MonoBehaviour
             gripObj.GetComponent<Bow>().OnCollider();
             isGripBow = true;
         }
+
+  
         else if (what == "Arrow")
         {
             ArrowSpawnSound.Post(gameObject);
@@ -89,6 +92,8 @@ public class Grip : MonoBehaviour
 
             isGripThrowObj = true;
         }
+
+    
         isGrip = true;
     }
 
@@ -301,3 +306,4 @@ public class Grip : MonoBehaviour
     }
     #endregion
 }
+

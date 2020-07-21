@@ -19,6 +19,7 @@ TagManager:
   - Lobby
   - Tip
   - LevelChanger
+  - TouchBabyArrow
   layers:
   - Default
   - TransparentFX
