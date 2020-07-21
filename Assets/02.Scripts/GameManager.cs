@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -41,9 +42,13 @@ public class GameManager : MonoBehaviour
     public Transform easy;
     public Transform middle;
     public Transform hard;
-    public string currentGameLevel = "Easy";
+    public int currentLevel = 0;
+    public int maxGameLevel = 3;
     public Transform targetTo;
     public bool isMove = false;
+
+    [Header("Level UI")]
+    public Image[] levelChecker = new Image[3];
 
     private void FixedUpdate()
     {
@@ -52,26 +57,30 @@ public class GameManager : MonoBehaviour
 
         if(isMove == true)
         {
+            //UI채우기
+            if(levelChecker[currentLevel].fillAmount != 1.0f)
+                levelChecker[currentLevel].fillAmount += 0.2f;
+
+            //타겟 움직이기
             target.position = Vector3.Lerp(target.position, targetTo.position, 0.05f);
             if (Vector3.Distance(target.position, targetTo.position) < 0.1f)
                 isMove = false;
         }
     }
 
-    public void MoveTarget(string where)
+    public void MoveTarget()
     {
-        //움직일 필요가 없을때
-        if (currentGameLevel == where)
-            return;
+        levelChecker[currentLevel].fillAmount = 0;
+        currentLevel++;
+        currentLevel /= maxGameLevel;
 
-        if (where == "Easy")
+        if (currentLevel == 0)
             targetTo = easy;
-        else if (where == "Middle")
+        else if (currentLevel == 1)
             targetTo = middle;
-        else if (where == "Hard")
+        else if (currentLevel == 2)
             targetTo = hard;
 
-        currentGameLevel = where;
         isMove = true;
     }
 }

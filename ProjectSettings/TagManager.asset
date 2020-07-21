@@ -18,6 +18,7 @@ TagManager:
   - Experience
   - Lobby
   - Tip
+  - LevelChanger
   layers:
   - Default
   - TransparentFX

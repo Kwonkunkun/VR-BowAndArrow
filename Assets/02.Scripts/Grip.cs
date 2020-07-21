@@ -162,7 +162,8 @@ public class Grip : MonoBehaviour
             return;    
 
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") || 
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || other.CompareTag("Reload"))
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || 
+            other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
         {
             //공통사항
             approachObj = other.gameObject;
@@ -190,6 +191,11 @@ public class Grip : MonoBehaviour
             {
                 Debug.Log("In Reload Space");
                 isInReloadSpace = true;
+            }
+            else if(other.CompareTag("LevelChanger"))
+            {
+                Debug.Log("In LevelChanger Space");
+                GameManager.instance.MoveTarget();
             }
             if (SteamInput.instance.isGoingScene == false)
             {
@@ -229,7 +235,8 @@ public class Grip : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || other.CompareTag("Reload"))
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || 
+            other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
         {
             //세부사항
             if (other.CompareTag("Bow"))
@@ -252,6 +259,7 @@ public class Grip : MonoBehaviour
                 Debug.Log("In Reload Space");
                 isInReloadSpace = false;
             }
+            
             //공통사항
             if (approachObj != null)
                 approachObj.GetComponent<Outline>().OutlineWidth = 2f;
