@@ -4,28 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Hand
-  - Bow
   - projectile
-  - Environment
   - Arrow
-  - Bow_ArrowSet
-  - ThrowObj
-  - BowBend
   - FxTemporaire
-  - Reload
-  - Museum
-  - Experience
-  - Lobby
   - Tip
-  - LevelChanger
-  - TouchBabyArrow
-<<<<<<< HEAD
-  - chuljeon
-  - birdarrow
-=======
-  - Sigi
->>>>>>> e2509f17f9e45e0ea7bfe1f6ef3199e81a045084
+  - BowBend
+  - Bow_ArrowSet
+  - Bow
   layers:
   - Default
   - TransparentFX
@@ -35,8 +20,8 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Player
+  - 
+  - 
   - 
   - 
   - 
