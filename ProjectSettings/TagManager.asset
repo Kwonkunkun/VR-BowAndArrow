@@ -20,6 +20,7 @@ TagManager:
   - Tip
   - LevelChanger
   - TouchBabyArrow
+  - Sigi
   layers:
   - Default
   - TransparentFX
