@@ -179,7 +179,9 @@ public class Grip : MonoBehaviour
 
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
             other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
-            other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
+            other.CompareTag("Reload") || other.CompareTag("LevelChanger") || 
+            other.CompareTag("TouchBabyArrow") || other.CompareTag("BirdArrow") || other.CompareTag("Chuljeon") ||
+            other.CompareTag("HandProtector") || other.CompareTag("Sigi"))
         {
             //공통사항
             approachObj = other.gameObject;
@@ -212,6 +214,31 @@ public class Grip : MonoBehaviour
             {
                 Debug.Log("In LevelChanger Space");
                 GameManager.instance.MoveTarget();
+            }
+            else if (other.CompareTag("TouchBabyArrow"))
+            {
+                Debug.Log("In TouchBabyArrow Space");
+                approachObj.GetComponent<ArrowUI>().OnVideo1();
+            }
+            else if (other.CompareTag("BirdArrow"))
+            {
+                Debug.Log("In BirdArrow Space");
+                approachObj.GetComponent<ArrowUI>().OnVideo2();
+            }
+            else if (other.CompareTag("Chuljeon"))
+            {
+                Debug.Log("In Chuljeon Space");
+                approachObj.GetComponent<ArrowUI>().OnVideo3();
+            }
+            else if (other.CompareTag("HandProtector"))
+            {
+                Debug.Log("In HandProtector Space");
+                approachObj.GetComponent<HandProtector>().OnCanvas();
+            }
+            else if (other.CompareTag("Sigi"))
+            {
+                Debug.Log("In Sigi Space");
+                approachObj.GetComponent<SigiTouch>().OnCanvas();
             }
             if (SteamInput.instance.isGoingScene == false)
             {
@@ -252,7 +279,9 @@ public class Grip : MonoBehaviour
     {
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
             other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
-            other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
+            other.CompareTag("Reload") || other.CompareTag("LevelChanger") || 
+            other.CompareTag("TouchBabyArrow")|| other.CompareTag("BirdArrow") || other.CompareTag("Chuljeon") ||
+            other.CompareTag("HandProtector"))
         {
             //세부사항
             if (other.CompareTag("Bow"))
@@ -277,7 +306,7 @@ public class Grip : MonoBehaviour
             }
 
             //공통사항
-            if (approachObj != null)
+            if (approachObj.GetComponent<Outline>() != null)
                 approachObj.GetComponent<Outline>().OutlineWidth = 2f;
             isApproach = false;
             approachObj = null;

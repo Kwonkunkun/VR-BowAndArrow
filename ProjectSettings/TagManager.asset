@@ -11,6 +11,17 @@ TagManager:
   - BowBend
   - Bow_ArrowSet
   - Bow
+  - Lobby
+  - TouchBabyArrow
+  - Reload
+  - LevelChanger
+  - Museum
+  - Experience
+  - BirdArrow
+  - Chuljeon
+  - HandProtector
+  - Sigi
+  - ThrowObj
   layers:
   - Default
   - TransparentFX

@@ -6,14 +6,17 @@ using UnityEngine.UI;
 public class SigiTouch : MonoBehaviour
 {
     
-    public Canvas canvas;
+    public GameObject canvas;
 
     public void OnCanvas()
     {
-        canvas.enabled = true;
+        canvas.SetActive(true);
+        StartCoroutine(OffCanvas());
     }
-    public void OffCanvas()
+    IEnumerator OffCanvas()
     {
-        canvas.enabled = false;
+        yield return new WaitForSeconds(5.0f);
+
+        canvas.SetActive(false);
     }
 }
