@@ -52,15 +52,15 @@ public class Arrow : MonoBehaviour
         m_Rigidbody.AddForce(transform.forward * (pulValue * m_Speed));
 
         line.enabled = true;
-
-        StartCoroutine(Die());
-        //Destroy(gameObject, 5.0f);
     }
 
-    IEnumerator Die()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        yield return new WaitForSeconds(2.0f);
-        GameManager.instance.UpdateScore(false);
-        DestroyImmediate(gameObject);
+        if(collision.gameObject.CompareTag("Environment"))
+        {
+            Debug.Log("Environment");
+            Destroy(gameObject);
+        }
     }
 }

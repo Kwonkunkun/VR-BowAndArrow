@@ -22,6 +22,7 @@ TagManager:
   - HandProtector
   - Sigi
   - ThrowObj
+  - Environment
   layers:
   - Default
   - TransparentFX

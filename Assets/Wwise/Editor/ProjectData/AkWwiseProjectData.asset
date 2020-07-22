@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8e7befd7753a664899d9ce8fbd5b8f90
     GuidInternal: 
-    m_lastTime: -8586062057964790953
+    m_lastTime: -8586061974318047594
     List:
     - name: AddSB
       guid: b1bdab3c12f5c34ca7e38372e997bb01
@@ -42,6 +42,24 @@ MonoBehaviour:
       - ElementName: AddSB
         ObjectType: 7
       Path: Default Work Unit\AddSB
+    - name: intro
+      guid: 33a12bde2235c945bab26623edea7762
+      id: 1125500713
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: intro
+        ObjectType: 7
+      Path: Default Work Unit\intro
+    - name: LeftDesk
+      guid: 230fbacb5f18da44a479c09ff28a98de
+      id: 742198245
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: LeftDesk
+        ObjectType: 7
+      Path: Default Work Unit\LeftDesk
     - name: SB_ArrowResult
       guid: bbe45a945c0d7f4b9cd99774ed3088e0
       id: 1501255583
@@ -69,6 +87,15 @@ MonoBehaviour:
       - ElementName: SB_BGMEvent
         ObjectType: 7
       Path: Default Work Unit\SB_BGMEvent
+    - name: SB_Museum
+      guid: 9a2f640e7a2e5644a809b6288d49f246
+      id: 2719379385
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: SB_Museum
+        ObjectType: 7
+      Path: Default Work Unit\SB_Museum
   - PhysicalPath: SoundBanks\SB_Nar3.wwu
     ParentPhysicalPath: 
     guid: 48cd0833eb494448a8ee8a6cfa74bec8
@@ -80,7 +107,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 83493fdcc31a9f469758758237f70a58
     GuidInternal: 
-    m_lastTime: -8586062059124588896
+    m_lastTime: -8586061974317957850
     List:
     - name: ArrowAir_Event
       guid: 7d4e4dbdfc097c4ab253857ab7a43944
@@ -200,8 +227,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\BGM1
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BowGrip
       guid: 34e2b28f2fcb944f8c25b18085ff7510
       id: 3576952471
@@ -214,6 +241,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.076349
       minDuration: 0.076349
+    - name: introbgm
+      guid: 211bbad17ae339419534757506665a65
+      id: 2489435561
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: introbgm
+        ObjectType: 3
+      Path: Default Work Unit\introbgm
+      maxAttenuation: 0
+      maxDuration: 362.18774
+      minDuration: 362.18774
+    - name: Museum
+      guid: a7acd05cc5eec641bfa1f6c02ab7d20f
+      id: 1362148849
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Museum
+        ObjectType: 3
+      Path: Default Work Unit\Museum
+      maxAttenuation: 0
+      maxDuration: 166.43762
+      minDuration: 166.43762
     - name: Nar1
       guid: 2a0341d8107eb943bc8fc113a903f90c
       id: 948652429
@@ -224,8 +275,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Nar1
       maxAttenuation: 0
-      maxDuration: 0
-      minDuration: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Nar22
       guid: d89996e3d83a2c418b20c7e76de5ea97
       id: 2437204664
@@ -236,8 +287,8 @@ MonoBehaviour:
         ObjectType: 3
       Path: Default Work Unit\Nar22
       maxAttenuation: 0
-      maxDuration: 5.545
-      minDuration: 5.545
+      maxDuration: -1
+      minDuration: -1
     - name: Nar3
       guid: 8fd14f92d0049248a61c2cf37f8f6efb
       id: 948652431
@@ -453,5 +504,6 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /VRArrow_WwiseProject
+  - /VRArrow_WwiseProject/SoundBanks
   autoPopulateEnabled: 1
   CurrentPluginConfig: 

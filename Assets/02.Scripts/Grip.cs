@@ -188,8 +188,9 @@ public class Grip : MonoBehaviour
         {
             //공통사항
             approachObj = other.gameObject;
-            if (approachObj.GetComponent<Outline>() != null)
-                approachObj.GetComponent<Outline>().OutlineWidth = 6f;
+            Outline outline = approachObj.GetComponent<Outline>();
+            if (outline != null)
+                outline.OutlineWidth = 6f;
             isApproach = true;
 
             //세부사항
@@ -241,6 +242,7 @@ public class Grip : MonoBehaviour
             else if (other.CompareTag("HandProtector"))
             {
                 Debug.Log("In HandProtector Space");
+                ArrowNockSound.Post(gameObject);
                 approachObj.GetComponent<HandProtector>().OnCanvas();
             }
             else if (other.CompareTag("Sigi"))
@@ -318,8 +320,9 @@ public class Grip : MonoBehaviour
             }
 
             //공통사항
-            if (approachObj.GetComponent<Outline>() != null)
-                approachObj.GetComponent<Outline>().OutlineWidth = 2f;
+            Outline outline = approachObj.GetComponent<Outline>();
+            if (outline != null)
+                outline.OutlineWidth = 2f;
             isApproach = false;
             approachObj = null;
         }
