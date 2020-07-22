@@ -21,10 +21,11 @@ namespace AK
         static const AkUniqueID ARROWREALESE_EVENT = 544038300U;
         static const AkUniqueID ARROWSPAWN_EVENT = 3984451668U;
         static const AkUniqueID BGM_EVENT = 1799075776U;
-        static const AkUniqueID BGM1 = 1189781958U;
         static const AkUniqueID BOWGRIP = 3576952471U;
-        static const AkUniqueID NAR1 = 948652429U;
-        static const AkUniqueID NAR22 = 2437204664U;
+        static const AkUniqueID INTROBGM = 2489435561U;
+        static const AkUniqueID SCENELOAD = 2610981307U;
+        static const AkUniqueID SIGISOUND = 4266279214U;
+        static const AkUniqueID TARGETMOVE = 2703374149U;
     } // namespace EVENTS
 
     namespace SWITCHES
@@ -64,11 +65,11 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID NAR1 = 948652429U;
+        static const AkUniqueID ADDSB = 2570592105U;
+        static const AkUniqueID INTRO = 1125500713U;
         static const AkUniqueID SB_ARROWRESULT = 1501255583U;
         static const AkUniqueID SB_ARROWSOUND = 3256071817U;
         static const AkUniqueID SB_BGMEVENT = 3231291807U;
-        static const AkUniqueID SB_NAR3 = 2513567111U;
     } // namespace BANKS
 
     namespace BUSSES

@@ -16,6 +16,9 @@ public class Grip : MonoBehaviour
    // public AK.Wwise.Event PullBackSound;
     public AK.Wwise.Event ArrowAirSound;
     public AK.Wwise.Event BowGripSound;
+    public AK.Wwise.Event SigiGripSound;
+    public AK.Wwise.Event TargetMoveSound;
+    public AK.Wwise.Event LoadSceneSound;
     #endregion
 
 
@@ -208,26 +211,31 @@ public class Grip : MonoBehaviour
             else if (other.CompareTag("Reload"))
             {
                 Debug.Log("In Reload Space");
+                ArrowSpawnSound.Post(gameObject);
                 isInReloadSpace = true;
             }
             else if (other.CompareTag("LevelChanger"))
             {
                 Debug.Log("In LevelChanger Space");
+                TargetMoveSound.Post(gameObject);
                 GameManager.instance.MoveTarget();
             }
             else if (other.CompareTag("TouchBabyArrow"))
             {
                 Debug.Log("In TouchBabyArrow Space");
+                ArrowSpawnSound.Post(gameObject);
                 approachObj.GetComponent<ArrowUI>().OnVideo1();
             }
             else if (other.CompareTag("BirdArrow"))
             {
                 Debug.Log("In BirdArrow Space");
+                ArrowSpawnSound.Post(gameObject);
                 approachObj.GetComponent<ArrowUI>().OnVideo2();
             }
             else if (other.CompareTag("Chuljeon"))
             {
                 Debug.Log("In Chuljeon Space");
+                ArrowSpawnSound.Post(gameObject);
                 approachObj.GetComponent<ArrowUI>().OnVideo3();
             }
             else if (other.CompareTag("HandProtector"))
@@ -238,6 +246,7 @@ public class Grip : MonoBehaviour
             else if (other.CompareTag("Sigi"))
             {
                 Debug.Log("In Sigi Space");
+                SigiGripSound.Post(gameObject);
                 approachObj.GetComponent<SigiTouch>().OnCanvas();
             }
             if (SteamInput.instance.isGoingScene == false)
@@ -246,12 +255,14 @@ public class Grip : MonoBehaviour
                 {
                     //여기서 시작 
                     Debug.Log("Approach Museum Ball");
+                    LoadSceneSound.Post(gameObject);
                     approachObj.GetComponent<PassSceneScript>().ScenePass("Museum");
                     SteamInput.instance.isGoingScene = true;
                 }
                 else if (other.CompareTag("Experience"))
                 {
                     Debug.Log("Approach Experience Ball");
+                    LoadSceneSound.Post(gameObject);
                     approachObj.GetComponent<PassSceneScript>().ScenePass("Experience");
                     SteamInput.instance.isGoingScene = true;
 
@@ -259,6 +270,7 @@ public class Grip : MonoBehaviour
                 else if (other.CompareTag("Lobby"))
                 {
                     Debug.Log("Approach Lobby Ball");
+                    LoadSceneSound.Post(gameObject);
                     approachObj.GetComponent<PassSceneScript>().ScenePass("Lobby");
                     SteamInput.instance.isGoingScene = true;
                 }
@@ -281,7 +293,7 @@ public class Grip : MonoBehaviour
             other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
             other.CompareTag("Reload") || other.CompareTag("LevelChanger") || 
             other.CompareTag("TouchBabyArrow")|| other.CompareTag("BirdArrow") || other.CompareTag("Chuljeon") ||
-            other.CompareTag("HandProtector"))
+            other.CompareTag("HandProtector") || other.CompareTag("Sigi"))
         {
             //세부사항
             if (other.CompareTag("Bow"))

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32803b62929a22f46a1bc657e722a268, type: 3}
-  m_Name: 42FE7803-3E90-4DC8-AB83-EDF81DD008A1
+  m_Name: DE2BA133-3522-45C9-BAB2-6623EDEA7762
   m_EditorClassIdentifier: 
-  objectName: SB_Nar3
-  id: 2513567111
-  guid: 42FE7803-3E90-4DC8-AB83-EDF81DD008A1
+  objectName: intro
+  id: 1125500713
+  guid: DE2BA133-3522-45C9-BAB2-6623EDEA7762

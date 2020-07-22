@@ -31,8 +31,17 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8e7befd7753a664899d9ce8fbd5b8f90
     GuidInternal: 
-    m_lastTime: -8586072838688713552
+    m_lastTime: -8586062057964790953
     List:
+    - name: AddSB
+      guid: b1bdab3c12f5c34ca7e38372e997bb01
+      id: 2570592105
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: AddSB
+        ObjectType: 7
+      Path: Default Work Unit\AddSB
     - name: SB_ArrowResult
       guid: bbe45a945c0d7f4b9cd99774ed3088e0
       id: 1501255583
@@ -64,32 +73,14 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 48cd0833eb494448a8ee8a6cfa74bec8
     GuidInternal: 
-    m_lastTime: -8586072824785469704
-    List:
-    - name: Nar1
-      guid: 7bfe1fbf29e9b748b5124f7f6dbd2b18
-      id: 948652429
-      PathAndIcons:
-      - ElementName: SB_Nar3
-        ObjectType: 12
-      - ElementName: Nar1
-        ObjectType: 7
-      Path: SB_Nar3\Nar1
-    - name: SB_Nar3
-      guid: 0378fe42903ec84dab83edf81dd008a1
-      id: 2513567111
-      PathAndIcons:
-      - ElementName: SB_Nar3
-        ObjectType: 12
-      - ElementName: SB_Nar3
-        ObjectType: 7
-      Path: SB_Nar3\SB_Nar3
+    m_lastTime: -8586062057964661293
+    List: []
   EventWwu:
   - PhysicalPath: Events\Default Work Unit.wwu
     ParentPhysicalPath: 
     guid: 83493fdcc31a9f469758758237f70a58
     GuidInternal: 
-    m_lastTime: -8586063803965192842
+    m_lastTime: -8586062059124588896
     List:
     - name: ArrowAir_Event
       guid: 7d4e4dbdfc097c4ab253857ab7a43944
@@ -175,6 +166,18 @@ MonoBehaviour:
       maxAttenuation: 100
       maxDuration: 1.749342
       minDuration: 0.701134
+    - name: ArrowSpawn_Event_01
+      guid: ad76d59a03b5f1438b05150cff2efa5a
+      id: 2335083514
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ArrowSpawn_Event_01
+        ObjectType: 3
+      Path: Default Work Unit\ArrowSpawn_Event_01
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: BGM_Event
       guid: fda240ef04f1e74cab10f2259d6ce491
       id: 1799075776
@@ -259,6 +262,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: PortalOpen
+      guid: dd354a01c8521f44b1d6ea2e0301974d
+      id: 2461641043
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: PortalOpen
+        ObjectType: 3
+      Path: Default Work Unit\PortalOpen
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Sceneload
+      guid: 7b036310f8f0a94a82084b58af6d684e
+      id: 2610981307
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: Sceneload
+        ObjectType: 3
+      Path: Default Work Unit\Sceneload
+      maxAttenuation: 0
+      maxDuration: 4.780408
+      minDuration: 4.780408
     - name: ShotBow_Event
       guid: 916e0a932e41664cb2254a573236c4a7
       id: 3978674182
@@ -271,6 +298,48 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: sigisound
+      guid: 1aea380ef12d8e49999137a0c11197e9
+      id: 4266279214
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: sigisound
+        ObjectType: 3
+      Path: Default Work Unit\sigisound
+      maxAttenuation: 0
+      maxDuration: 0.5005
+      minDuration: 0.5005
+    - name: TargetMove
+      guid: 23704edde6039a4892e9592fd6cc92c6
+      id: 2703374149
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: TargetMove
+        ObjectType: 3
+      Path: Default Work Unit\TargetMove
+      maxAttenuation: 0
+      maxDuration: 5.37075
+      minDuration: 5.37075
+    - name: took
+      guid: 5da8e16e6444d947bbcbb51e83379f37
+      id: 3225790884
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: took
+        ObjectType: 3
+      Path: Default Work Unit\took
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+  - PhysicalPath: Events\TargetMove.wwu
+    ParentPhysicalPath: 
+    guid: 054a15391da585489476aa8d96017b44
+    GuidInternal: 
+    m_lastTime: -8586062059737647209
+    List: []
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     ParentPhysicalPath: 
@@ -384,7 +453,5 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /VRArrow_WwiseProject
-  - /VRArrow_WwiseProject/Events
-  - /VRArrow_WwiseProject/Events/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
