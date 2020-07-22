@@ -179,7 +179,7 @@ public class Grip : MonoBehaviour
 
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
             other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
-            other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
+            other.CompareTag("Reload") || other.CompareTag("LevelChanger") || other.CompareTag("TouchBabyArrow") || other.CompareTag("birdarrow") || other.CompareTag("chuljeon"))
         {
             //공통사항
             approachObj = other.gameObject;
@@ -212,6 +212,21 @@ public class Grip : MonoBehaviour
             {
                 Debug.Log("In LevelChanger Space");
                 GameManager.instance.MoveTarget();
+            }
+            else if(other.CompareTag("TouchBabyArrow"))
+            {
+                Debug.Log("In TouchBabyArrow Space");
+                approachObj.GetComponent<ArrowUI>().OnVideo1();
+            }
+            else if (other.CompareTag("birdarrow"))
+            {
+                Debug.Log("In birdarrow Space");
+                approachObj.GetComponent<ArrowUI>().OnVideo2();
+            }
+            else if (other.CompareTag("chuljeon"))
+            {
+                Debug.Log("In chuljeon Space");
+                approachObj.GetComponent<ArrowUI>().OnVideo3();
             }
             if (SteamInput.instance.isGoingScene == false)
             {
@@ -252,7 +267,7 @@ public class Grip : MonoBehaviour
     {
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
             other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
-            other.CompareTag("Reload") || other.CompareTag("LevelChanger"))
+            other.CompareTag("Reload") || other.CompareTag("LevelChanger") || other.CompareTag("TouchBabyArrow") ||other.CompareTag("birdarrow") || other.CompareTag("chuljeon"))
         {
             //세부사항
             if (other.CompareTag("Bow"))

@@ -20,6 +20,8 @@ TagManager:
   - Tip
   - LevelChanger
   - TouchBabyArrow
+  - chuljeon
+  - birdarrow
   layers:
   - Default
   - TransparentFX
