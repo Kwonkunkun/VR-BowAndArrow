@@ -54,7 +54,7 @@ public class Grip : MonoBehaviour
 
         //approachObj가 이미 잡힌 상태라면 return
         ObjStatus objStatus = approachObj.GetComponent<ObjStatus>();
-        if (objStatus.isGrip == true)
+        if (objStatus != null && objStatus.isGrip == true)
             return;
         objStatus.isGrip = true;
 
@@ -188,7 +188,7 @@ public class Grip : MonoBehaviour
         {
             //공통사항
             approachObj = other.gameObject;
-            if (approachObj != null)
+            if (approachObj.GetComponent<Outline>() != null)
                 approachObj.GetComponent<Outline>().OutlineWidth = 6f;
             isApproach = true;
 
@@ -341,8 +341,6 @@ public class Grip : MonoBehaviour
     void PlayNockSound()
     {
         ArrowNockSound.Post(gameObject);
-
-
 
     }
     #endregion

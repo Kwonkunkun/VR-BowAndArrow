@@ -33,7 +33,7 @@ public class SteamInput : MonoBehaviour
     public SteamVR_Behaviour_Pose m_RightHandPose = null;
     public SteamVR_Action_Boolean m_UpButton = null;
     public SteamVR_Action_Boolean m_PullAction = null;
-    public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
+    //public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
     #endregion
 
     #region 양손 Grip 스크립트
@@ -95,7 +95,7 @@ public class SteamInput : MonoBehaviour
                 {
                     Bow bow = leftGrip.gripObj.GetComponent<Bow>();
                     bow.Release();
-                    haptic.Execute(0.2f, 0.1f, 200.0f, 1f, m_RightHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+                    //haptic.Execute(0.2f, 0.1f, 200.0f, 1f, m_RightHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
 
                     //활이 날아가는 사운드
                 }         
@@ -185,7 +185,7 @@ public class SteamInput : MonoBehaviour
                     Debug.Log("Bow release");
                     Bow bow = rightGrip.gripObj.GetComponent<Bow>();
                     bow.Release();
-                    haptic.Execute(0.2f, 0.1f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
+                    //haptic.Execute(0.2f, 0.1f, 200.0f, 1f, m_LeftHandPose.inputSource); //웨이팅 타임 지속시간, 주파수, 진폭
 
                     //활이 날아가는 사운드
                 }
