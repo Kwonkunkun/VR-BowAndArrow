@@ -20,8 +20,12 @@ TagManager:
   - Tip
   - LevelChanger
   - TouchBabyArrow
+<<<<<<< HEAD
   - chuljeon
   - birdarrow
+=======
+  - Sigi
+>>>>>>> e2509f17f9e45e0ea7bfe1f6ef3199e81a045084
   layers:
   - Default
   - TransparentFX
