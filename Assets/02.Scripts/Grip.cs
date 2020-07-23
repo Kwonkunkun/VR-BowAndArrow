@@ -121,12 +121,13 @@ public class Grip : MonoBehaviour
         {
             gripObj.GetComponent<BowBlend>().OffGripPose(skeleton);
             gripObj.GetComponent<Bow>().OffCollider();
+            BowGripSound.Post(gameObject);
             isGripBow = false;
         }
         else if (what == "Arrow")
         {
             gripObj.GetComponent<ArrowBlend>().OffGripPose(skeleton);
-
+            BowGripSound.Post(gameObject);
             isGripArrow = false;
         }
         else if (what == "ThrowObj")
