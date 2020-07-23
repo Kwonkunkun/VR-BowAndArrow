@@ -9,5 +9,5 @@
   <SoundbankPath>Audio/GeneratedSoundBanks</SoundbankPath>
   <WwiseInstallationPathMac />
   <WwiseInstallationPathWindows>C:\Program Files (x86)\Audiokinetic\Wwise 2019.1.8.7173</WwiseInstallationPathWindows>
-  <WwiseProjectPath>../../../VRArrow/VRArrow_WwiseProject/VRArrow_WwiseProject.wproj</WwiseProjectPath>
+  <WwiseProjectPath>../../VRArrow_WwiseProject/VRArrow_WwiseProject.wproj</WwiseProjectPath>
 </WwiseSettings>

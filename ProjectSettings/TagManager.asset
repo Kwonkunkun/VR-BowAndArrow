@@ -23,6 +23,7 @@ TagManager:
   - Sigi
   - ThrowObj
   - Environment
+  - ExplainBow
   layers:
   - Default
   - TransparentFX

@@ -505,5 +505,6 @@ MonoBehaviour:
   ExpandedItems:
   - /VRArrow_WwiseProject
   - /VRArrow_WwiseProject/SoundBanks
+  - /VRArrow_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1
   CurrentPluginConfig: 
