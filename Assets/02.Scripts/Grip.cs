@@ -256,6 +256,7 @@ public class Grip : MonoBehaviour
             {
                 Debug.Log("In ExplainBow Space");
                 approachObj.GetComponent<BowExplain>().OnCanvas();
+                BowGripSound.Post(gameObject);
             }
             if (SteamInput.instance.isGoingScene == false)
             {
@@ -301,7 +302,7 @@ public class Grip : MonoBehaviour
             other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
             other.CompareTag("Reload") || other.CompareTag("LevelChanger") || 
             other.CompareTag("TouchBabyArrow")|| other.CompareTag("BirdArrow") || other.CompareTag("Chuljeon") ||
-            other.CompareTag("HandProtector") || other.CompareTag("Sigi"))
+            other.CompareTag("HandProtector") || other.CompareTag("Sigi") || other.CompareTag("ExplainBow"))
         {
             //세부사항
             if (other.CompareTag("Bow"))
