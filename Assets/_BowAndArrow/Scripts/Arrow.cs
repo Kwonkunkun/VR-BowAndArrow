@@ -12,7 +12,6 @@ public class Arrow : MonoBehaviour
     
     //Trail 껐다 키기에 필요한 아이들
     private TrailRenderer line;
-    
 
     private void Awake()
     {

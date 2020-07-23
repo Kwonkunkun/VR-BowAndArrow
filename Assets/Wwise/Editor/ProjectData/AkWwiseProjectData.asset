@@ -31,7 +31,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 8e7befd7753a664899d9ce8fbd5b8f90
     GuidInternal: 
-    m_lastTime: -8586061974318047594
+    m_lastTime: -8586061309049885629
     List:
     - name: AddSB
       guid: b1bdab3c12f5c34ca7e38372e997bb01
@@ -107,7 +107,7 @@ MonoBehaviour:
     ParentPhysicalPath: 
     guid: 83493fdcc31a9f469758758237f70a58
     GuidInternal: 
-    m_lastTime: -8586061974317957850
+    m_lastTime: -8586061309049995313
     List:
     - name: ArrowAir_Event
       guid: 7d4e4dbdfc097c4ab253857ab7a43944
@@ -241,6 +241,30 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 0.076349
       minDuration: 0.076349
+    - name: ground
+      guid: dc1c2dacfeb6594c87918da434b3e5c4
+      id: 2528658256
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: ground
+        ObjectType: 3
+      Path: Default Work Unit\ground
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: hit
+      guid: 8315e94a24bd4844947cd6c35bdbc9ee
+      id: 1116398592
+      PathAndIcons:
+      - ElementName: Default Work Unit
+        ObjectType: 12
+      - ElementName: hit
+        ObjectType: 3
+      Path: Default Work Unit\hit
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: introbgm
       guid: 211bbad17ae339419534757506665a65
       id: 2489435561
@@ -504,6 +528,8 @@ MonoBehaviour:
     List: []
   ExpandedItems:
   - /VRArrow_WwiseProject
+  - /VRArrow_WwiseProject/Events
+  - /VRArrow_WwiseProject/Events/Default Work Unit
   - /VRArrow_WwiseProject/SoundBanks
   - /VRArrow_WwiseProject/SoundBanks/Default Work Unit
   autoPopulateEnabled: 1

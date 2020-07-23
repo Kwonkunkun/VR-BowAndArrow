@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
+    public AK.Wwise.Event DrawCircleSnd;
+    public AK.Wwise.Event DrawXSnd;
+
     [Header("Target Move")]
     public Transform target;
     public Transform easy;
@@ -108,17 +111,25 @@ public class GameManager : MonoBehaviour
             GameInit();
 
         if (isTargetHit == true)
+        {
+            DrawCircleSnd.Post(gameObject);
             StartCoroutine(DrawCircle(currentCount));
         
+        }
         else
+        {
+            DrawXSnd.Post(gameObject);
             StartCoroutine(DrawX_1(currentCount));
-        
+    
+        }
         currentCount++;
         currentCount %= maxCount;
     }
 
     IEnumerator DrawCircle(int num)
     {
+       
+        
         sucessUI[num].fillAmount += 0.05f;
         yield return new WaitForSeconds(0.05f);
         if(sucessUI[num].fillAmount !=1)
@@ -127,6 +138,8 @@ public class GameManager : MonoBehaviour
     
     IEnumerator DrawX_1(int num)
     {
+       
+       
         failUI_1[num].fillAmount += 0.05f;
         yield return new WaitForSeconds(0.025f);
         if (failUI_1[num].fillAmount != 1)

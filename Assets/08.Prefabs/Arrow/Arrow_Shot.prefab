@@ -147,6 +147,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Speed: 2000
   m_Tip: {fileID: 0}
+  HitGroundSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 10456e43bc9c22045bcae1cfbeba3170,
+      type: 2}
 --- !u!54 &3001902477014182997
 Rigidbody:
   m_ObjectHideFlags: 0

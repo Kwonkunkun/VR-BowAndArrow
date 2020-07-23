@@ -22,6 +22,8 @@ namespace AK
         static const AkUniqueID ARROWSPAWN_EVENT = 3984451668U;
         static const AkUniqueID BGM_EVENT = 1799075776U;
         static const AkUniqueID BOWGRIP = 3576952471U;
+        static const AkUniqueID GROUND = 2528658256U;
+        static const AkUniqueID HIT = 1116398592U;
         static const AkUniqueID INTROBGM = 2489435561U;
         static const AkUniqueID MUSEUM = 1362148849U;
         static const AkUniqueID SCENELOAD = 2610981307U;
