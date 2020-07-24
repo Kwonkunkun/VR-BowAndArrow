@@ -52,8 +52,11 @@ public class SteamInput : MonoBehaviour
         //잡은게 없을때
         if (rightGrip.isGrip == false)
         {
+          
             if (m_PullAction.GetStateDown(m_RightHandPose.inputSource))
             {
+                if (rightGrip.isInReloadSpace == true)
+                    return;
 
                 //활쏘기, 왼손에 활이 있어야 됨
                 if (leftGrip.isGripBow == true && rightGrip.isInBowBend == true)
@@ -79,12 +82,6 @@ public class SteamInput : MonoBehaviour
                         rightGrip.OnGrip("Arrow");
 
                         //화살 잡는 사운드
-                    }
-
-                    //공잡기
-                    else if (rightGrip.isInThrowObjSpace == true)
-                    {
-                        rightGrip.OnGrip("ThrowObj");
                     }
                 }
             }
@@ -137,6 +134,9 @@ public class SteamInput : MonoBehaviour
         {
             if (m_PullAction.GetStateDown(m_LeftHandPose.inputSource))
             {
+                if (leftGrip.isInReloadSpace == true)
+                    return;
+
                 Debug.Log("LeftHand Grip");
 
                 //활쏘기, 오른손에 활이 있어야 됨

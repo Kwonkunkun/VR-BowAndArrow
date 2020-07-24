@@ -77,9 +77,7 @@ public class Grip : MonoBehaviour
             gripObj.GetComponent<BowBlend>().OnGripPose(skeleton);
             gripObj.GetComponent<Bow>().OnCollider();
             isGripBow = true;
-        }
-
-  
+        } 
         else if (what == "Arrow")
         {
             ArrowSpawnSound.Post(gameObject);

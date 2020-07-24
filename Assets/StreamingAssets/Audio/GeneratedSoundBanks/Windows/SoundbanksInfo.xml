@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="134">
+	<RootPaths>
+		<ProjectRoot>C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="742198245" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\LeftDesk</ObjectPath>
+			<ShortName>LeftDesk</ShortName>
+			<Path>LeftDesk.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2610981307" Name="Sceneload" ObjectPath="\Events\Default Work Unit\Sceneload" DurationType="OneShot" DurationMin="4.780408" DurationMax="4.780408"/>
+				<Event Id="2703374149" Name="TargetMove" ObjectPath="\Events\Default Work Unit\TargetMove" DurationType="OneShot" DurationMin="5.370750" DurationMax="5.370750"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="38283608" Language="SFX">
+					<ShortName>Transitions 효과음16.wav</ShortName>
+					<Path>SFX\Transitions 효과음16_10C4C929.wem</Path>
+				</File>
+				<File Id="926228542" Language="SFX">
+					<ShortName>Portal-sound-effect (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1125500713" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\intro</ObjectPath>
+			<ShortName>intro</ShortName>
+			<Path>intro.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2489435561" Name="introbgm" ObjectPath="\Events\Default Work Unit\introbgm" DurationType="OneShot" DurationMin="362.187744" DurationMax="362.187744"/>
+				<Event Id="2610981307" Name="Sceneload" ObjectPath="\Events\Default Work Unit\Sceneload" DurationType="OneShot" DurationMin="4.780408" DurationMax="4.780408"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="228417066" Language="SFX">
+					<ShortName>Soft, Peaceful, Inspiring Background Music Instrumental (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Soft, Peaceful, Inspiring Background Music Instrumental (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+				<File Id="926228542" Language="SFX">
+					<ShortName>Portal-sound-effect (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1501255583" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\SB_ArrowResult</ObjectPath>
+			<ShortName>SB_ArrowResult</ShortName>
+			<Path>SB_ArrowResult.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1601986307" Name="ArrowFallGround_Event" ObjectPath="\Events\Default Work Unit\ArrowFallGround_Event" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.843152" DurationMax="1.171338"/>
+				<Event Id="2659507634" Name="ArrowHit_Event" ObjectPath="\Events\Default Work Unit\ArrowHit_Event" DurationType="OneShot" DurationMin="0.737914" DurationMax="1.165578"/>
+				<Event Id="2610981307" Name="Sceneload" ObjectPath="\Events\Default Work Unit\Sceneload" DurationType="OneShot" DurationMin="4.780408" DurationMax="4.780408"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="3272584" Language="SFX">
+					<ShortName>ArrowFallGround04.wav</ShortName>
+					<Path>SFX\ArrowFallGround04_BBC9F90A.wem</Path>
+				</File>
+				<File Id="49545343" Language="SFX">
+					<ShortName>ArrowHit01.wav</ShortName>
+					<Path>SFX\ArrowHit01_10C4C929.wem</Path>
+				</File>
+				<File Id="56628956" Language="SFX">
+					<ShortName>ArrowFallGround05.wav</ShortName>
+					<Path>SFX\ArrowFallGround05_C8B51C9A.wem</Path>
+				</File>
+				<File Id="103695184" Language="SFX">
+					<ShortName>ArrowHit04.wav</ShortName>
+					<Path>SFX\ArrowHit04_10C4C929.wem</Path>
+				</File>
+				<File Id="165807743" Language="SFX">
+					<ShortName>ArrowFallGround02.wav</ShortName>
+					<Path>SFX\ArrowFallGround02_88A8D68A.wem</Path>
+				</File>
+				<File Id="197637927" Language="SFX">
+					<ShortName>ArrowFallGround06.wav</ShortName>
+					<Path>SFX\ArrowFallGround06_AAB5FA77.wem</Path>
+				</File>
+				<File Id="308171517" Language="SFX">
+					<ShortName>ArrowFallGround07.wav</ShortName>
+					<Path>SFX\ArrowFallGround07_AAB5FA77.wem</Path>
+				</File>
+				<File Id="396434467" Language="SFX">
+					<ShortName>ArrowHit03.wav</ShortName>
+					<Path>SFX\ArrowHit03_10C4C929.wem</Path>
+				</File>
+				<File Id="432576998" Language="SFX">
+					<ShortName>ArrowHit05.wav</ShortName>
+					<Path>SFX\ArrowHit05_10C4C929.wem</Path>
+				</File>
+				<File Id="660579292" Language="SFX">
+					<ShortName>ArrowHit06.wav</ShortName>
+					<Path>SFX\ArrowHit06_10C4C929.wem</Path>
+				</File>
+				<File Id="721289992" Language="SFX">
+					<ShortName>ArrowHit02.wav</ShortName>
+					<Path>SFX\ArrowHit02_10C4C929.wem</Path>
+				</File>
+				<File Id="757057244" Language="SFX">
+					<ShortName>ArrowFallGround01.wav</ShortName>
+					<Path>SFX\ArrowFallGround01_4B572CAF.wem</Path>
+				</File>
+				<File Id="785422338" Language="SFX">
+					<ShortName>ArrowFallGround03.wav</ShortName>
+					<Path>SFX\ArrowFallGround03_712B4BBF.wem</Path>
+				</File>
+				<File Id="926228542" Language="SFX">
+					<ShortName>Portal-sound-effect (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="2570592105" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\AddSB</ObjectPath>
+			<ShortName>AddSB</ShortName>
+			<Path>AddSB.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2610981307" Name="Sceneload" ObjectPath="\Events\Default Work Unit\Sceneload" DurationType="OneShot" DurationMin="4.780408" DurationMax="4.780408"/>
+				<Event Id="4266279214" Name="sigisound" ObjectPath="\Events\Default Work Unit\sigisound" DurationType="OneShot" DurationMin="0.500500" DurationMax="0.500500"/>
+				<Event Id="2703374149" Name="TargetMove" ObjectPath="\Events\Default Work Unit\TargetMove" DurationType="OneShot" DurationMin="5.370750" DurationMax="5.370750"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="38283608" Language="SFX">
+					<ShortName>Transitions 효과음16.wav</ShortName>
+					<Path>SFX\Transitions 효과음16_10C4C929.wem</Path>
+				</File>
+				<File Id="72399934" Language="SFX">
+					<ShortName>sound_paper_01.wav</ShortName>
+					<Path>SFX\sound_paper_01_10C4C929.wem</Path>
+				</File>
+				<File Id="926228542" Language="SFX">
+					<ShortName>Portal-sound-effect (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="2719379385" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\SB_Museum</ObjectPath>
+			<ShortName>SB_Museum</ShortName>
+			<Path>SB_Museum.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1362148849" Name="Museum" ObjectPath="\Events\Default Work Unit\Museum" DurationType="OneShot" DurationMin="166.437622" DurationMax="166.437622"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="399205407" Language="SFX">
+					<ShortName>Verve (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Verve (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3231291807" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\SB_BGMEvent</ObjectPath>
+			<ShortName>SB_BGMEvent</ShortName>
+			<Path>SB_BGMEvent.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1799075776" Name="BGM_Event" ObjectPath="\Events\Default Work Unit\BGM_Event" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="125.973335" DurationMax="125.973335"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="834407031" Language="SFX">
+					<ShortName>BG_Oriole.wav</ShortName>
+					<Path>SFX\BG_Oriole_10C4C929.wem</Path>
+				</File>
+				<File Id="995799257" Language="SFX">
+					<ShortName>cricket2_4 (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\cricket2_4 (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="3256071817" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\SB_ArrowSound</ObjectPath>
+			<ShortName>SB_ArrowSound</ShortName>
+			<Path>SB_ArrowSound.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1876790197" Name="ArrowAir_Event" ObjectPath="\Events\Default Work Unit\ArrowAir_Event" DurationType="OneShot" DurationMin="0.520363" DurationMax="1.000000"/>
+				<Event Id="3210970906" Name="ArrowNock_Event" ObjectPath="\Events\Default Work Unit\ArrowNock_Event" DurationType="OneShot" DurationMin="0.209252" DurationMax="0.890159"/>
+				<Event Id="926319793" Name="ArrowPullBack_Event" ObjectPath="\Events\Default Work Unit\ArrowPullBack_Event" DurationType="OneShot" DurationMin="0.554626" DurationMax="1.453900"/>
+				<Event Id="544038300" Name="ArrowRealese_Event" ObjectPath="\Events\Default Work Unit\ArrowRealese_Event" DurationType="OneShot" DurationMin="0.905238" DurationMax="1.770658"/>
+				<Event Id="3984451668" Name="ArrowSpawn_Event" ObjectPath="\Events\Default Work Unit\ArrowSpawn_Event" MaxAttenuation="100.000000" DurationType="OneShot" DurationMin="0.701134" DurationMax="1.749342"/>
+				<Event Id="3576952471" Name="BowGrip" ObjectPath="\Events\Default Work Unit\BowGrip" DurationType="OneShot" DurationMin="0.076349" DurationMax="0.076349"/>
+				<Event Id="2528658256" Name="ground" ObjectPath="\Events\Default Work Unit\ground" DurationType="OneShot" DurationMin="2.616168" DurationMax="2.616168"/>
+				<Event Id="1116398592" Name="hit" ObjectPath="\Events\Default Work Unit\hit" DurationType="OneShot" DurationMin="3.349433" DurationMax="3.349433"/>
+				<Event Id="2610981307" Name="Sceneload" ObjectPath="\Events\Default Work Unit\Sceneload" DurationType="OneShot" DurationMin="4.780408" DurationMax="4.780408"/>
+				<Event Id="4266279214" Name="sigisound" ObjectPath="\Events\Default Work Unit\sigisound" DurationType="OneShot" DurationMin="0.500500" DurationMax="0.500500"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="408588" Language="SFX">
+					<ShortName>ArrowSpawn07.wav</ShortName>
+					<Path>SFX\ArrowSpawn07_10C4C929.wem</Path>
+				</File>
+				<File Id="19178719" Language="SFX">
+					<ShortName>ArrowRelease03.wav</ShortName>
+					<Path>SFX\ArrowRelease03_10C4C929.wem</Path>
+				</File>
+				<File Id="39848702" Language="SFX">
+					<ShortName>ArrowNock04.wav</ShortName>
+					<Path>SFX\ArrowNock04_10C4C929.wem</Path>
+				</File>
+				<File Id="45488779" Language="SFX">
+					<ShortName>ArrowNock15.wav</ShortName>
+					<Path>SFX\ArrowNock15_10C4C929.wem</Path>
+				</File>
+				<File Id="48000117" Language="SFX">
+					<ShortName>ArrowNock02.wav</ShortName>
+					<Path>SFX\ArrowNock02_10C4C929.wem</Path>
+				</File>
+				<File Id="51463204" Language="SFX">
+					<ShortName>ArrowAir09.wav</ShortName>
+					<Path>SFX\ArrowAir09_10C4C929.wem</Path>
+				</File>
+				<File Id="51837107" Language="SFX">
+					<ShortName>ArrowRelease08.wav</ShortName>
+					<Path>SFX\ArrowRelease08_10C4C929.wem</Path>
+				</File>
+				<File Id="72399934" Language="SFX">
+					<ShortName>sound_paper_01.wav</ShortName>
+					<Path>SFX\sound_paper_01_10C4C929.wem</Path>
+				</File>
+				<File Id="85483458" Language="SFX">
+					<ShortName>ArrowNock06.wav</ShortName>
+					<Path>SFX\ArrowNock06_10C4C929.wem</Path>
+				</File>
+				<File Id="87756789" Language="SFX">
+					<ShortName>ArrowRelease05.wav</ShortName>
+					<Path>SFX\ArrowRelease05_10C4C929.wem</Path>
+				</File>
+				<File Id="111013753" Language="SFX">
+					<ShortName>ArrowAir04.wav</ShortName>
+					<Path>SFX\ArrowAir04_10C4C929.wem</Path>
+				</File>
+				<File Id="111443428" Language="SFX">
+					<ShortName>LongbowPullBack04.wav</ShortName>
+					<Path>SFX\LongbowPullBack04_10C4C929.wem</Path>
+				</File>
+				<File Id="130282900" Language="SFX">
+					<ShortName>ArrowRelease09.wav</ShortName>
+					<Path>SFX\ArrowRelease09_10C4C929.wem</Path>
+				</File>
+				<File Id="138487824" Language="SFX">
+					<ShortName>LongbowPullBack15.wav</ShortName>
+					<Path>SFX\LongbowPullBack15_10C4C929.wem</Path>
+				</File>
+				<File Id="151483414" Language="SFX">
+					<ShortName>drum-japanese2.wav</ShortName>
+					<Path>SFX\drum-japanese2_10C4C929.wem</Path>
+				</File>
+				<File Id="154027843" Language="SFX">
+					<ShortName>LongbowPullBack14.wav</ShortName>
+					<Path>SFX\LongbowPullBack14_10C4C929.wem</Path>
+				</File>
+				<File Id="172642648" Language="SFX">
+					<ShortName>LongbowPullBack02.wav</ShortName>
+					<Path>SFX\LongbowPullBack02_10C4C929.wem</Path>
+				</File>
+				<File Id="203326255" Language="SFX">
+					<ShortName>LongbowPullBack12.wav</ShortName>
+					<Path>SFX\LongbowPullBack12_10C4C929.wem</Path>
+				</File>
+				<File Id="211381110" Language="SFX">
+					<ShortName>ArrowNock11.wav</ShortName>
+					<Path>SFX\ArrowNock11_10C4C929.wem</Path>
+				</File>
+				<File Id="213281040" Language="SFX">
+					<ShortName>ArrowNock09.wav</ShortName>
+					<Path>SFX\ArrowNock09_10C4C929.wem</Path>
+				</File>
+				<File Id="216912983" Language="SFX">
+					<ShortName>ArrowNock12.wav</ShortName>
+					<Path>SFX\ArrowNock12_10C4C929.wem</Path>
+				</File>
+				<File Id="283531767" Language="SFX">
+					<ShortName>ArrowNock17.wav</ShortName>
+					<Path>SFX\ArrowNock17_10C4C929.wem</Path>
+				</File>
+				<File Id="287765381" Language="SFX">
+					<ShortName>ArrowAir08.wav</ShortName>
+					<Path>SFX\ArrowAir08_10C4C929.wem</Path>
+				</File>
+				<File Id="295337624" Language="SFX">
+					<ShortName>ArrowAir02.wav</ShortName>
+					<Path>SFX\ArrowAir02_10C4C929.wem</Path>
+				</File>
+				<File Id="296582371" Language="SFX">
+					<ShortName>ArrowRelease06.wav</ShortName>
+					<Path>SFX\ArrowRelease06_10C4C929.wem</Path>
+				</File>
+				<File Id="366297761" Language="SFX">
+					<ShortName>LongbowPullBack13.wav</ShortName>
+					<Path>SFX\LongbowPullBack13_10C4C929.wem</Path>
+				</File>
+				<File Id="413302698" Language="SFX">
+					<ShortName>ArrowSpawn03.wav</ShortName>
+					<Path>SFX\ArrowSpawn03_10C4C929.wem</Path>
+				</File>
+				<File Id="415202260" Language="SFX">
+					<ShortName>LongbowPullBack16.wav</ShortName>
+					<Path>SFX\LongbowPullBack16_10C4C929.wem</Path>
+				</File>
+				<File Id="417651381" Language="SFX">
+					<ShortName>ArrowSpawn06.wav</ShortName>
+					<Path>SFX\ArrowSpawn06_10C4C929.wem</Path>
+				</File>
+				<File Id="428292299" Language="SFX">
+					<ShortName>ArrowAir07.wav</ShortName>
+					<Path>SFX\ArrowAir07_10C4C929.wem</Path>
+				</File>
+				<File Id="436951066" Language="SFX">
+					<ShortName>LongbowPullBack05.wav</ShortName>
+					<Path>SFX\LongbowPullBack05_10C4C929.wem</Path>
+				</File>
+				<File Id="449799742" Language="SFX">
+					<ShortName>ArrowRelease01.wav</ShortName>
+					<Path>SFX\ArrowRelease01_10C4C929.wem</Path>
+				</File>
+				<File Id="471654214" Language="SFX">
+					<ShortName>ArrowRelease02.wav</ShortName>
+					<Path>SFX\ArrowRelease02_10C4C929.wem</Path>
+				</File>
+				<File Id="483311210" Language="SFX">
+					<ShortName>ArrowAir05.wav</ShortName>
+					<Path>SFX\ArrowAir05_10C4C929.wem</Path>
+				</File>
+				<File Id="574906364" Language="SFX">
+					<ShortName>LongbowPullBack10.wav</ShortName>
+					<Path>SFX\LongbowPullBack10_10C4C929.wem</Path>
+				</File>
+				<File Id="589490267" Language="SFX">
+					<ShortName>ArrowSpawn02.wav</ShortName>
+					<Path>SFX\ArrowSpawn02_10C4C929.wem</Path>
+				</File>
+				<File Id="636907322" Language="SFX">
+					<ShortName>ArrowAir06.wav</ShortName>
+					<Path>SFX\ArrowAir06_10C4C929.wem</Path>
+				</File>
+				<File Id="683774352" Language="SFX">
+					<ShortName>ArrowNock14.wav</ShortName>
+					<Path>SFX\ArrowNock14_10C4C929.wem</Path>
+				</File>
+				<File Id="683783774" Language="SFX">
+					<ShortName>drum-japanese1.wav</ShortName>
+					<Path>SFX\drum-japanese1_10C4C929.wem</Path>
+				</File>
+				<File Id="689523648" Language="SFX">
+					<ShortName>LongbowPullBack01.wav</ShortName>
+					<Path>SFX\LongbowPullBack01_10C4C929.wem</Path>
+				</File>
+				<File Id="707701746" Language="SFX">
+					<ShortName>ArrowNock03.wav</ShortName>
+					<Path>SFX\ArrowNock03_10C4C929.wem</Path>
+				</File>
+				<File Id="717603757" Language="SFX">
+					<ShortName>ArrowNock05.wav</ShortName>
+					<Path>SFX\ArrowNock05_10C4C929.wem</Path>
+				</File>
+				<File Id="719365705" Language="SFX">
+					<ShortName>ArrowNock16.wav</ShortName>
+					<Path>SFX\ArrowNock16_10C4C929.wem</Path>
+				</File>
+				<File Id="721739883" Language="SFX">
+					<ShortName>LongbowPullBack07.wav</ShortName>
+					<Path>SFX\LongbowPullBack07_10C4C929.wem</Path>
+				</File>
+				<File Id="727300077" Language="SFX">
+					<ShortName>LongbowPullBackclick_01.wav</ShortName>
+					<Path>SFX\LongbowPullBackclick_01_10C4C929.wem</Path>
+				</File>
+				<File Id="749931890" Language="SFX">
+					<ShortName>ArrowNock13.wav</ShortName>
+					<Path>SFX\ArrowNock13_10C4C929.wem</Path>
+				</File>
+				<File Id="760165422" Language="SFX">
+					<ShortName>LongbowPullBack11.wav</ShortName>
+					<Path>SFX\LongbowPullBack11_10C4C929.wem</Path>
+				</File>
+				<File Id="778077175" Language="SFX">
+					<ShortName>ArrowSpawn08.wav</ShortName>
+					<Path>SFX\ArrowSpawn08_10C4C929.wem</Path>
+				</File>
+				<File Id="845056450" Language="SFX">
+					<ShortName>LongbowPullBack09.wav</ShortName>
+					<Path>SFX\LongbowPullBack09_10C4C929.wem</Path>
+				</File>
+				<File Id="884697200" Language="SFX">
+					<ShortName>ArrowSpawn04.wav</ShortName>
+					<Path>SFX\ArrowSpawn04_10C4C929.wem</Path>
+				</File>
+				<File Id="926228542" Language="SFX">
+					<ShortName>Portal-sound-effect (online-audio-converter.com).wav</ShortName>
+					<Path>SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem</Path>
+				</File>
+				<File Id="929909803" Language="SFX">
+					<ShortName>ArrowNock08.wav</ShortName>
+					<Path>SFX\ArrowNock08_10C4C929.wem</Path>
+				</File>
+				<File Id="931340917" Language="SFX">
+					<ShortName>ArrowAir03.wav</ShortName>
+					<Path>SFX\ArrowAir03_10C4C929.wem</Path>
+				</File>
+				<File Id="962222744" Language="SFX">
+					<ShortName>LongbowPullBack06.wav</ShortName>
+					<Path>SFX\LongbowPullBack06_10C4C929.wem</Path>
+				</File>
+				<File Id="964305019" Language="SFX">
+					<ShortName>ArrowSpawn01.wav</ShortName>
+					<Path>SFX\ArrowSpawn01_10C4C929.wem</Path>
+				</File>
+				<File Id="997529483" Language="SFX">
+					<ShortName>LongbowPullBack03.wav</ShortName>
+					<Path>SFX\LongbowPullBack03_10C4C929.wem</Path>
+				</File>
+				<File Id="1001150274" Language="SFX">
+					<ShortName>ArrowNock10.wav</ShortName>
+					<Path>SFX\ArrowNock10_10C4C929.wem</Path>
+				</File>
+				<File Id="1005087742" Language="SFX">
+					<ShortName>ArrowRelease04.wav</ShortName>
+					<Path>SFX\ArrowRelease04_10C4C929.wem</Path>
+				</File>
+				<File Id="1030902748" Language="SFX">
+					<ShortName>ArrowSpawn05.wav</ShortName>
+					<Path>SFX\ArrowSpawn05_10C4C929.wem</Path>
+				</File>
+				<File Id="1034330200" Language="SFX">
+					<ShortName>ArrowNock07.wav</ShortName>
+					<Path>SFX\ArrowNock07_10C4C929.wem</Path>
+				</File>
+				<File Id="1045201110" Language="SFX">
+					<ShortName>ArrowAir01.wav</ShortName>
+					<Path>SFX\ArrowAir01_10C4C929.wem</Path>
+				</File>
+				<File Id="1055860495" Language="SFX">
+					<ShortName>LongbowPullBack08.wav</ShortName>
+					<Path>SFX\LongbowPullBack08_10C4C929.wem</Path>
+				</File>
+				<File Id="1058072205" Language="SFX">
+					<ShortName>ArrowRelease07.wav</ShortName>
+					<Path>SFX\ArrowRelease07_10C4C929.wem</Path>
+				</File>
+				<File Id="1068656276" Language="SFX">
+					<ShortName>ArrowNock01.wav</ShortName>
+					<Path>SFX\ArrowNock01_10C4C929.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

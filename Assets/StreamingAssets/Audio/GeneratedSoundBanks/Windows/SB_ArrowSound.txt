@@ -1,0 +1,89 @@
+Event	ID	Name			Wwise Object Path	Notes
+	544038300	ArrowRealese_Event			\Default Work Unit\ArrowRealese_Event	
+	926319793	ArrowPullBack_Event			\Default Work Unit\ArrowPullBack_Event	
+	1116398592	hit			\Default Work Unit\hit	
+	1876790197	ArrowAir_Event			\Default Work Unit\ArrowAir_Event	
+	2528658256	ground			\Default Work Unit\ground	
+	2610981307	Sceneload			\Default Work Unit\Sceneload	
+	3210970906	ArrowNock_Event			\Default Work Unit\ArrowNock_Event	
+	3576952471	BowGrip			\Default Work Unit\BowGrip	
+	3984451668	ArrowSpawn_Event			\Default Work Unit\ArrowSpawn_Event	
+	4266279214	sigisound			\Default Work Unit\sigisound	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	210977264	SW_ArrowProgress			\Default Work Unit\SW_ArrowProgress	
+
+Switch	ID	Name	Switch Group			Notes
+	830775945	PullBack	SW_ArrowProgress			
+	1050421051	Air	SW_ArrowProgress			
+	3095539507	Realease	SW_ArrowProgress			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	891400966	PR_PullBack			\Default Work Unit\PR_PullBack	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	408588	ArrowSpawn07	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn07		105478
+	19178719	ArrowRelease03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease03		117446
+	39848702	ArrowNock04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock04		56512
+	45488779	ArrowNock15	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock15_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock15		28402
+	48000117	ArrowNock02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock02		55324
+	51463204	ArrowAir09	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir09_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir09		60922
+	51837107	ArrowRelease08	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease08		118826
+	72399934	Sigisound	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\sound_paper_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sigisound		96160
+	85483458	ArrowNock06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock06		25224
+	87756789	ArrowRelease05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease05		156236
+	111013753	ArrowAir04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir04		88264
+	111443428	LongbowPullBack04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack04		68740
+	130282900	ArrowRelease09	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease09_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease09		135472
+	138487824	LongbowPullBack15	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack15_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack15		104858
+	151483414	drum-japanese2	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\drum-japanese2_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\drum-japanese2		461556
+	154027843	LongbowPullBack14	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack14_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack14		85342
+	172642648	LongbowPullBack02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack02		48982
+	203326255	LongbowPullBack12	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack12_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack12		128298
+	211381110	ArrowNock11	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock11_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock11		40014
+	213281040	ArrowNock09	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock09_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock09		78576
+	216912983	ArrowNock12	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock12_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock12		45088
+	283531767	ArrowNock17	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock17_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock17		36044
+	287765381	ArrowAir08	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir08		53828
+	295337624	ArrowAir02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir02		63098
+	296582371	ArrowRelease06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease06		113486
+	366297761	LongbowPullBack13	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack13_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack13		100790
+	413302698	ArrowSpawn03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn03		61904
+	415202260	LongbowPullBack16	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack16_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack16		117104
+	417651381	ArrowSpawn06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn06		72036
+	428292299	ArrowAir07	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir07		53828
+	436951066	LongbowPullBack05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack05		70622
+	449799742	ArrowRelease01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease01		112798
+	471654214	ArrowRelease02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease02		79906
+	483311210	ArrowAir05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir05		68382
+	574906364	LongbowPullBack10	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack10_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack10		104496
+	589490267	ArrowSpawn02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn02		118120
+	636907322	ArrowAir06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir06		76084
+	683774352	ArrowNock14	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock14_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock14		24078
+	683783774	drum-japanese1	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\drum-japanese1_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\drum-japanese1		590904
+	689523648	LongbowPullBack01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack01		92260
+	707701746	ArrowNock03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock03		18520
+	717603757	ArrowNock05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock05		69040
+	719365705	ArrowNock16	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock16_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock16		35634
+	721739883	LongbowPullBack07	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack07		92260
+	727300077	LongbowPullBackclick_01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBackclick_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\LongbowPullBackclick_01		6798
+	749931890	ArrowNock13	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock13_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock13		24816
+	760165422	LongbowPullBack11	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack11_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack11		95140
+	778077175	ArrowSpawn08	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn08		154356
+	845056450	LongbowPullBack09	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack09_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack09		119194
+	884697200	ArrowSpawn04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn04		116574
+	926228542	SceneLoad	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SceneLoad		843328
+	929909803	ArrowNock08	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock08		67082
+	931340917	ArrowAir03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir03		45960
+	962222744	LongbowPullBack06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack06		76266
+	964305019	ArrowSpawn01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn01		91516
+	997529483	LongbowPullBack03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack03		70622
+	1001150274	ArrowNock10	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock10_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock10		27466
+	1005087742	ArrowRelease04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease04		132716
+	1030902748	ArrowSpawn05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowSpawn05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowSpawn\ArrowSpawn05		107688
+	1034330200	ArrowNock07	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock07		42710
+	1045201110	ArrowAir01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowAir01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowAir\ArrowAir01		52272
+	1055860495	LongbowPullBack08	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\LongbowPullBack08_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\Ran_ArrowPullBack\LongbowPullBack08		55568
+	1058072205	ArrowRelease07	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowRelease07_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowProcess\Ran_ArrowRealeas\ArrowRelease07		85062
+	1068656276	ArrowNock01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowNock01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Ran_ArrowNock\ArrowNock01		46974
+

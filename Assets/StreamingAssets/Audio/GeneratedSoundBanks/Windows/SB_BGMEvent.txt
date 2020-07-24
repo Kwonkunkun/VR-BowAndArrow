@@ -1,0 +1,13 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1799075776	BGM_Event			\Default Work Unit\BGM_Event	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3805275197	BGM_Parameter			\Default Work Unit\BGM_Parameter	
+
+Effect plug-ins	ID	Name	Type				Notes
+	2995775460	Room_Small	Wwise RoomVerb			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	834407031	BG_Oriole	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\BG_Oriole_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM_Blend\BG_Oriole		24186944
+	995799257	BG_Cricket	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\cricket2_4 (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\BGM_Blend\BG_Cricket		21391216
+

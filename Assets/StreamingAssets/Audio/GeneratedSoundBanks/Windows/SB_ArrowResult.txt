@@ -1,0 +1,28 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1601986307	ArrowFallGround_Event			\Default Work Unit\ArrowFallGround_Event	
+	2610981307	Sceneload			\Default Work Unit\Sceneload	
+	2659507634	ArrowHit_Event			\Default Work Unit\ArrowHit_Event	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3475700082	SW_ArrowResult			\Default Work Unit\SW_ArrowResult	
+
+Switch	ID	Name	Switch Group			Notes
+	1116398592	Hit	SW_ArrowResult			
+	2512384458	Fall	SW_ArrowResult			
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	3272584	ArrowFallGround04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround04_BBC9F90A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround04		88998
+	49545343	ArrowHit01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowHit01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowHit\ArrowHit01		70858
+	56628956	ArrowFallGround05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround05_C8B51C9A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround05		94130
+	103695184	ArrowHit04	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowHit04_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowHit\ArrowHit04		88264
+	165807743	ArrowFallGround02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround02_88A8D68A.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround02		97672
+	197637927	ArrowFallGround06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround06_AAB5FA77.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround06		91628
+	308171517	ArrowFallGround07	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround07_AAB5FA77.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround07		103376
+	396434467	ArrowHit03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowHit03_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowHit\ArrowHit03		88264
+	432576998	ArrowHit05	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowHit05_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowHit\ArrowHit05		102868
+	660579292	ArrowHit06	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowHit06_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowHit\ArrowHit06		65148
+	721289992	ArrowHit02	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowHit02_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowHit\ArrowHit02		88264
+	757057244	ArrowFallGround01	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround01_4B572CAF.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround01		74430
+	785422338	ArrowFallGround03	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\ArrowFallGround03_712B4BBF.wem		\Actor-Mixer Hierarchy\Default Work Unit\ShotBow\ArrowResult\Ran_ArrowFallGround\ArrowFallGround03		93498
+	926228542	SceneLoad	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SceneLoad		843328
+

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	1362148849	Museum			\Default Work Unit\Museum	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	399205407	Verve (online-audio-converter_com)	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Verve (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Verve (online-audio-converter_com)		29359660
+

@@ -738,6 +738,10 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Build: 0
+    Collab: 0
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   luminIcon:
     m_Name: 
@@ -751,10 +755,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 6c2b2a16-0d13-4576-af63-0d8de770a6be
+  cloudProjectId: f27d94ea-517f-41e1-a579-73fcb24897f7
   framebufferDepthMemorylessMode: 0
-  projectName: BowAndArrow_Unity
-  organizationId: c-through
+  projectName: BowAndArrow_Unity (1)
+  organizationId: medici-edu
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

@@ -1,0 +1,9 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2610981307	Sceneload			\Default Work Unit\Sceneload	
+	2703374149	TargetMove			\Default Work Unit\TargetMove	
+	4266279214	sigisound			\Default Work Unit\sigisound	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	38283608	TargetMove	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Transitions 	72399934	Sigisound	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\sound_paper_01_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\Sigisound		96160
+	926228542	SceneLoad	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SceneLoad		843328
+

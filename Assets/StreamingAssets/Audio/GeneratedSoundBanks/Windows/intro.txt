@@ -1,0 +1,8 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2489435561	introbgm			\Default Work Unit\introbgm	
+	2610981307	Sceneload			\Default Work Unit\Sceneload	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	228417066	Soft, Peaceful, Inspiring Background Music Instrumental (online-audio-converter_com)	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Soft, Peaceful, Inspiring Background Music Instrumental (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\New Work Unit\Soft, Peaceful, Inspiring Background Music Instrumental (online-audio-converter_com)		63889984
+	926228542	SceneLoad	C:\Users\user\Documents\GitHub\VRArrow_WwiseProject\.cache\Windows\SFX\Portal-sound-effect (online-audio-converter.com)_10C4C929.wem		\Actor-Mixer Hierarchy\Default Work Unit\SceneLoad		843328
+
