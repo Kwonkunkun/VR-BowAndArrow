@@ -127,9 +127,7 @@ public class GameManager : MonoBehaviour
     }
 
     IEnumerator DrawCircle(int num)
-    {
-       
-        
+    { 
         sucessUI[num].fillAmount += 0.05f;
         yield return new WaitForSeconds(0.05f);
         if(sucessUI[num].fillAmount !=1)
@@ -138,8 +136,6 @@ public class GameManager : MonoBehaviour
     
     IEnumerator DrawX_1(int num)
     {
-       
-       
         failUI_1[num].fillAmount += 0.05f;
         yield return new WaitForSeconds(0.025f);
         if (failUI_1[num].fillAmount != 1)

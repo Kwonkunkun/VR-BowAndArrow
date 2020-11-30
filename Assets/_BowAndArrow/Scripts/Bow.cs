@@ -25,6 +25,8 @@ public class Bow : MonoBehaviour
     private string whatIsHand = null;
     private SteamVR_Skeleton_Poser steamVR_Skeleton_Poser;
 
+    private bool isViveration = false;
+
     #region
     public AK.Wwise.Event InAirSound;
     public AK.Wwise.Event PullBackSound;
@@ -44,6 +46,12 @@ public class Bow : MonoBehaviour
         m_PulValue = Mathf.Clamp(m_PulValue, 0.0f, 1.0f);
         m_Animator.SetFloat("Blend", m_PulValue);
 
+        if (m_PulValue >= 0.65f && m_PulValue <= 0.8f)
+        {
+            SteamInput.instance.PlayVibration();
+        }
+           
+
         //pose
         steamVR_Skeleton_Poser.SetBlendingBehaviourValue("ShotPose", m_PulValue);
 
@@ -55,6 +63,7 @@ public class Bow : MonoBehaviour
                 tr_arrow.LookAt(rightArrowSetPos);
             else if (whatIsHand == "Right")
                 tr_arrow.LookAt(leftArrowSetPos);
+
         }
     }
 
@@ -113,7 +122,6 @@ public class Bow : MonoBehaviour
         }
 
         m_PullingHand = null;
-
         m_PulValue = 0.0f;
         m_Animator.SetFloat("Blend", 0);
         //pose

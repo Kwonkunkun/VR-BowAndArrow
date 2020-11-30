@@ -180,7 +180,7 @@ public class Grip : MonoBehaviour
             return;
 
         if (other.CompareTag("Bow") || other.CompareTag("Arrow") || other.CompareTag("ThrowObj") ||
-            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") ||
+            other.CompareTag("Museum") || other.CompareTag("Experience") || other.CompareTag("Lobby") || other.CompareTag("Quiz") || 
             other.CompareTag("Reload") || other.CompareTag("LevelChanger") || 
             other.CompareTag("TouchBabyArrow") || other.CompareTag("BirdArrow") || other.CompareTag("Chuljeon") ||
             other.CompareTag("HandProtector") || other.CompareTag("Sigi") || other.CompareTag("ExplainBow"))
@@ -279,6 +279,13 @@ public class Grip : MonoBehaviour
                     Debug.Log("Approach Lobby Ball");
                     LoadSceneSound.Post(gameObject);
                     approachObj.GetComponent<PassSceneScript>().ScenePass("Lobby");
+                    SteamInput.instance.isGoingScene = true;
+                }
+                else if (other.CompareTag("Quiz"))
+                {
+                    Debug.Log("Approach Quiz Ball");
+                    LoadSceneSound.Post(gameObject);
+                    approachObj.GetComponent<PassSceneScript>().ScenePass("Quiz");
                     SteamInput.instance.isGoingScene = true;
                 }
             }

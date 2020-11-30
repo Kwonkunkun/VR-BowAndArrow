@@ -59,7 +59,8 @@ public class Arrow : MonoBehaviour
         if(collision.gameObject.CompareTag("Environment"))
         {
             Debug.Log("Environment");
-            GameManager.instance.UpdateScore(false);
+            if(GameManager.instance.gameObject != null)
+                GameManager.instance.UpdateScore(false);
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.velocity = Vector3.zero;
             Destroy(gameObject, 0.0f);

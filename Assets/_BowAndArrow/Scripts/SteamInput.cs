@@ -33,7 +33,7 @@ public class SteamInput : MonoBehaviour
     public SteamVR_Behaviour_Pose m_RightHandPose = null;
     public SteamVR_Action_Boolean m_UpButton = null;
     public SteamVR_Action_Boolean m_PullAction = null;
-    //public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
+    public SteamVR_Action_Vibration haptic = SteamVR_Actions.default_Haptic;
     #endregion
 
     #region 양손 Grip 스크립트
@@ -241,5 +241,21 @@ public class SteamInput : MonoBehaviour
             }
         }
         #endregion
+    }
+
+    public void PlayVibration()
+    {
+        Debug.Log("PlayVibration");
+        float frequency = Random.Range(75.0f, 150.0f);
+        float amplitude = Random.Range(30.0f, 75.0f);
+        float duration = 0.1f;
+        Pulse(duration, frequency, amplitude, SteamVR_Input_Sources.LeftHand);
+        Pulse(duration, frequency, amplitude, SteamVR_Input_Sources.RightHand);
+    }
+
+    private void Pulse(float duration, float frequency, float amplitude, SteamVR_Input_Sources source)
+    {
+        haptic.Execute(0, duration, frequency, amplitude, source);
+        Debug.Log("Pulse " + source.ToString());
     }
 }

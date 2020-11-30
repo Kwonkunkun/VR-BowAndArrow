@@ -24,6 +24,7 @@ TagManager:
   - ThrowObj
   - Environment
   - ExplainBow
+  - Quiz
   layers:
   - Default
   - TransparentFX
