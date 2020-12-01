@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Arrow : MonoBehaviour
 {
@@ -59,7 +60,7 @@ public class Arrow : MonoBehaviour
         if(collision.gameObject.CompareTag("Environment"))
         {
             Debug.Log("Environment");
-            if(GameManager.instance.gameObject != null)
+            if(SceneManager.GetActiveScene().name != "Quiz")
                 GameManager.instance.UpdateScore(false);
             m_Rigidbody.isKinematic = true;
             m_Rigidbody.velocity = Vector3.zero;

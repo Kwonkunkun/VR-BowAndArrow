@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Reload : MonoBehaviour
 {
@@ -16,7 +17,8 @@ public class Reload : MonoBehaviour
             arrow.transform.position = tr_arrow_pos[i].position;
 
             //여기서 게임 초기화 처리
-            GameManager.instance.GameInit();
+            if(SceneManager.GetActiveScene().name != "Quiz")
+                GameManager.instance.GameInit();
         }
 
         ArrowSpawnSound.Post(gameObject);

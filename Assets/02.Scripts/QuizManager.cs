@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuizManager : MonoBehaviour
 {
+    
     #region 싱글톤
     private static QuizManager m_instance; // 싱글톤이 할당될 static 변수
     public static QuizManager instance
@@ -33,6 +35,7 @@ public class QuizManager : MonoBehaviour
         }
     }
     #endregion
+
     [Header("Score")]
     public int currentCount = 0;
     public int maxCount = 5;
@@ -45,14 +48,59 @@ public class QuizManager : MonoBehaviour
     [Header("Answer")]
     public bool[] answer = new bool[5]; 
 
+    [Header("Question List")]
+    public GameObject[] Question = new GameObject[6];
+    public float explainTime;
+
+    [Header("Question List")]
+    public GameObject oTarget;
+    public GameObject xTarget;
+
     private void Start()
     {
         GameInit();
     }
 
+    private void AppearTarget()
+    {
+        oTarget.SetActive(true);
+        xTarget.SetActive(true);
+    }
+    private void DisappearTarget()
+    {
+        oTarget.SetActive(false);
+        xTarget.SetActive(false);
+    }
+
+    private void LoadScene()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
+
+    IEnumerator AppearQuestion(float time)
+    {
+        Debug.Log("AppearQuestion -1 " + currentCount.ToString());
+        DisappearTarget();
+
+        yield return new WaitForSeconds(time);
+        Debug.Log("AppearQuestion -2 : " + currentCount.ToString());
+        if (currentCount - 1 >= 0)
+            Question[currentCount - 1].SetActive(false);
+        // 문제 등장
+        Question[currentCount].SetActive(true);
+        AppearTarget();
+
+        //만약에 마지막 엔딩이면
+        if(currentCount == 5)
+        {
+            Invoke("LoadScene", 5.0f);
+        }
+    }
+
     public void GameInit()
     {
         Debug.Log("GameInit");
+        StartCoroutine(AppearQuestion(5.0f));
         currentCount = 0;
         for (int i = 0; i < maxCount; i++)
         {
@@ -84,7 +132,13 @@ public class QuizManager : MonoBehaviour
 
             StartCoroutine(DrawX_1(currentCount));
         }
+
+        //해설 몇초간 explainTime간
+        Question[currentCount].GetComponent<Animator>().SetBool("IsCheck", true);
         currentCount++;
+
+        //다음문제
+        StartCoroutine(AppearQuestion(6.0f));
     }
 
     IEnumerator DrawCircle(int num)
@@ -94,7 +148,6 @@ public class QuizManager : MonoBehaviour
         if (sucessUI[num].fillAmount != 1)
             StartCoroutine(DrawCircle(num));
     }
-
     IEnumerator DrawX_1(int num)
     {
         failUI_1[num].fillAmount += 0.05f;
