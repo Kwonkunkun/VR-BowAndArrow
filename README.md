@@ -8,20 +8,24 @@
 3. 손의 자연스러운 애니메이션 구현
 4. steamVR의 playerPrefab을 사용하지 않고 직접 잡기, 놓기 등의 인터렉션 구현
 
+---
 
 ### 씬 소개
 <img width="1019" alt="image" src="https://user-images.githubusercontent.com/59603575/102003822-a9325400-3cbf-11eb-8367-af01291f9b33.png">
 
+---
 
 ### 기획 의도
 ![image](https://user-images.githubusercontent.com/59603575/102003835-d252e480-3cbf-11eb-8475-440a4bb72e96.png)
 
 - 잊혀져가는 전통문화 ‘국궁’을 가장 현대적인 기술인 VR을 통해서 더 이상 잊혀가는 전통이 아닌 재미있는 놀이로 다시 우리의 곁으로 돌아오길 바라는 마음으로 기획
 
+---
 
 ### UML
 <img width="907" alt="image" src="https://user-images.githubusercontent.com/59603575/102003859-00d0bf80-3cc0-11eb-8549-0574d85cf9ce.png">
 
+---
 
 ## **개발 내용**
 
@@ -171,6 +175,8 @@ private void FireArrow()
 **특징**
 - Approach와 Grip확인 변수를 따로둬서 Approach된 상태의 오브젝트만 잡을수 있도록 함
 - 자세한 내용 설명 URL : https://kunkunwoo.tistory.com/167
+
+---
 
 ## 개발 기간, 맡은 역할, 사용 프로그램
 
